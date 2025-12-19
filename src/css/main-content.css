@@ -181,4 +181,17 @@
   }
 }
 
-@media screen and (min-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+  .main-text-box {
+    width: 720px;
+    padding: 98px 64px;
+  }
+
+  .main-img-box {
+    width: 568px;
+  }
+
+  .main-statistic {
+    width: 1312px;
+  }
+}
