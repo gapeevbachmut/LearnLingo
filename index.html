@@ -16,19 +16,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <script type="module" crossorigin src="/LearnLingo/index.js"></script>
-  <link rel="stylesheet" crossorigin href="/LearnLingo/assets/styles-B4wtGZqA.css">
+  <link rel="stylesheet" crossorigin href="/LearnLingo/assets/styles-8mhsrnoB.css">
 </head>
 
 <body>
   <header class="header">
-  <div class="container">
+  <div class="container container-header">
     <nav class="nav">
 
       <a class="nav-logo" href="./index.html" aria-label="Site logo">
         <svg class="nav-logo-icon" width="28" height="28">
           <use href="../img/sprite.svg#icon-ukraine"></use>
         </svg>LearnLingo </a>
-
 
       <ul class="nav-list">
         <li class="nav-item">
@@ -38,16 +37,15 @@
           <a class="nav-link " href="./teachers.html">Teachers</a>
         </li>
       </ul>
+
     </nav>
-    <div>
-
-
-      <ul>
+    <div class="auth">
+      <ul class="auth-list">
         <li><a class="logIn">
             <svg width="20" height="20">
               <use href="../img/sprite.svg#icon-log-in"></use>
             </svg>Log in</a></li>
-        <li><a>Registration</a></li>
+        <li><a class="register">Registration</a></li>
       </ul>
     </div>
   </div>
@@ -55,21 +53,56 @@
 </header>
 
   <main>
-    <h1>HOME PAGE</h1>
     <!-- Loads the specified .html file -->
     <!-- load src="./partials/vite-promo.html" / -->
-    <!-- load src="./partials/badges.html" / -->
+    <section class="container main-content-container">
+  <div class="main-content">
+    <div class="main-text-box">
+      <h1 class="main-text-title">Unlock your potential with the best <span class="title-language">language</span>
+        tutors</h1>
+      <p class="main-text-descr">
+        Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new
+        heights by
+        connecting with highly qualified and experienced tutors.
+      </p>
+      <a class="main-text-btn" href="./teachers.html">
+        Get started
+      </a>
+    </div>
+    <div class="main-img-box">
+      <img src="../img/main-content/main-content.png" alt="main-image" width="568" height="530" />
+    </div>
+
+  </div>
+  <div class="main-statistic">
+    <ul class="stat-list">
+      <li class="stat-item">
+        <p class="stat-number">32,000 +</p>
+        <p class="stat-descr">Experienced tutors</p>
+      </li>
+      <li class="stat-item">
+        <p class="stat-number">300,000 +</p>
+        <p class="stat-descr">5-star tutor reviews</p>
+      </li>
+      <li class="stat-item">
+        <p class="stat-number">120 +</p>
+        <p class="stat-descr">Subjects taught</p>
+      </li>
+      <li class="stat-item">
+        <p class="stat-number">200 +</p>
+        <p class="stat-descr">Tutor nationalities</p>
+      </li>
+    </ul>
+  </div>
+
+</section>
   </main>
 
-  <footer className={css.footer}>
-  <div className={css.content}>
-    <div className={css.wrap}>
-      <p>
-        Created by
-        <a href="https://github.com/gapeevbachmut" target="_blank">Hapieiev Andrii</a>
-
-      </p>
-    </div>
+  <footer class="footer">
+  <div class="footer-content">
+    <p class="footer-text"> Created by
+      <a href="https://github.com/gapeevbachmut" target="_blank">Hapieiev Andrii</a>
+    </p>
     <p>© 2025 - {new Date().getFullYear()} All rights reserved.</p>
   </div>
 </footer>
