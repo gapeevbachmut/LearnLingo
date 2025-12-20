@@ -1,21 +1,18 @@
-import teachers from '../DB/teachers.json';
-import { createTeacherCard, fetchTeachers } from './teacher-card.js';
-
-// console.log(teachers);
-
-teachers.forEach(teacher => {
-  // console.log(teacher.name);
-});
+import { createTeacherCard } from './teacher-card.js';
+import { fetchTeachers } from './teachers-api.js';
 
 const teacherList = document.querySelector('.teachers-list');
 const perPage = 4;
 
-function renderTeachers(teachersArray) {
-  const markup = teachersArray
+async function renderTeachers() {
+  const teachers = await fetchTeachers();
+
+  const markup = teachers
+    .slice(0, perPage)
     .map(teacher => createTeacherCard(teacher))
     .join('');
 
   teacherList.innerHTML = markup;
 }
 
-renderTeachers(teachers);
+renderTeachers();

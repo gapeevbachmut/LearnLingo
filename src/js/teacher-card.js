@@ -1,29 +1,3 @@
-import teachers from '../DB/teachers.json';
-import axios from 'axios';
-
-teachers.forEach(teacher => {
-  // console.log(teacher.name);
-});
-
-// ------------------------------------------------
-
-const API_TEACHERS =
-  'https://learnlingo-12-25-default-rtdb.firebaseio.com/.json';
-
-export async function fetchTeachers() {
-  const response = await axios.get(API_TEACHERS);
-
-  console.log('response', response.data);
-  response.data.forEach(teacher => {
-    console.log(teacher.name);
-  });
-  const teachersArray = Object.values(response.data);
-
-  return teachersArray;
-}
-
-fetchTeachers();
-
 export function createTeacherCard(teacher) {
   return `
 <li class="teacher-card">
