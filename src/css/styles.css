@@ -12,7 +12,8 @@
 
 /* Sections style */
 @import url('./header.css');
-/* @import url('./vite-promo.css'); */
 @import url('./main-content.css');
+@import url('./filters.css');
+@import url('./teachers-list.css');
 /* @import url('./back-link.css'); */
 @import url('./footer.css');

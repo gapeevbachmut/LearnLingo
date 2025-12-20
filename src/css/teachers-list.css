@@ -1,0 +1,126 @@
+.container {
+  /* border: solid 1px red; */
+}
+
+.teachers {
+  /* border: solid 1px blue; */
+
+}
+
+.teachers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.teacher-card {
+  border: solid 1px rgb(18, 139, 4);
+}
+
+.teacher-avatar {
+  border: 3px solid #fbe9ba;
+  border-radius: 100px;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
+.teacher-avatar-img {
+  border-radius: 100px;
+  width: 96px;
+  height: 96px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.teacher-avatar-svg {
+  position: absolute;
+  top: 19px;
+  left: 85px;
+}
+
+.teacher-content {
+  padding: 12px;
+}
+
+.teacher-content-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.teacher-data {
+  margin-bottom: 12px;
+}
+
+.teacher-languages {
+  margin-bottom: 6px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #8a8a89;
+}
+
+.teacher-name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 100%;
+  color: #121417;
+}
+
+.teacher-meta {}
+
+
+.teacher-lessons-online {}
+
+.svg-book {
+  stroke: #121417;
+  fill: #121417;
+}
+
+.teacher-separator {
+  display: none;
+}
+
+.teacher-lessons-done {}
+
+.teacher-rating {}
+
+.teacher-price {}
+
+.teacher-like-btn {}
+
+
+.teacher-info {}
+
+.teacher-speaks {}
+
+.teacher-info-label {}
+
+.teacher-lesson-info {}
+
+.teacher-conditions {}
+
+.teacher-read-more {}
+
+.teacher-levels {}
+
+.teacher-level {}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 1200px) {}
+
+@media screen and (min-width: 1440px) {
+  .teachers-list {
+    margin-left: 110px;
+    margin-right: 110px;
+  }
+}

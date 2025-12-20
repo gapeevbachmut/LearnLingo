@@ -1,3 +1,5 @@
+'use strict';
+
 const date = new Date();
 // console.log('Date: ', date);
 // console.log('Full year: ', date.getFullYear());
