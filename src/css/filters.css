@@ -1,0 +1,23 @@
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.filter-label {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 129%;
+  color: #8a8a89;
+
+}
+
+.filter-select {
+  border-radius: 8px;
+  padding: 6px 6px 6px 6px;
+  width: 200px;
+  background-color: #fff;
+  border: none;
+}

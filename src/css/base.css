@@ -20,7 +20,12 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 125%;
+  background-color: #fff;
   color: #121417;
+}
+
+.body-teachers {
+  background-color: #f8f8f8;
 }
 
 main {

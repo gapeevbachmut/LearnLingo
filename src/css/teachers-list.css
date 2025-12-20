@@ -1,9 +1,7 @@
-.container {
-  /* border: solid 1px red; */
-}
-
 .teachers {
-  /* border: solid 1px blue; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
@@ -15,7 +13,8 @@
 }
 
 .teacher-card {
-  border: solid 1px rgb(18, 139, 4);
+  background-color: white;
+  border-radius: 24px
 }
 
 .teacher-avatar {
@@ -60,59 +59,111 @@
 
 .teacher-languages {
   margin-bottom: 6px;
-  font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
   line-height: 150%;
   color: #8a8a89;
 }
 
 .teacher-name {
-  font-family: var(--font-family);
   font-weight: 500;
   font-size: 24px;
   line-height: 100%;
   color: #121417;
 }
 
-.teacher-meta {}
-
-
-.teacher-lessons-online {}
-
-.svg-book {
-  stroke: #121417;
-  fill: #121417;
+.teacher-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
 .teacher-separator {
   display: none;
 }
 
-.teacher-lessons-done {}
+.teacher-lessons-online,
+.teacher-lessons-done,
+.teacher-rating,
+.teacher-price,
+.teacher-info,
+.teacher-info-label {
+  font-weight: 500;
+  line-height: 150%;
+}
 
-.teacher-rating {}
+.price-color {
+  color: #38cd3e;
+}
 
-.teacher-price {}
+.teacher-like-btn {
+  border: none;
+  background-color: white;
+  margin-bottom: 12px;
+}
 
-.teacher-like-btn {}
+.svg-heart {
+  stroke: #121417;
+  fill: white;
+}
 
+.teacher-info-label {
+  color: #8a8a89;
+}
 
-.teacher-info {}
+.teacher-info-language {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
 
-.teacher-speaks {}
+.teacher-read-more {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #121417;
+  border: none;
+  background-color: white;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
 
-.teacher-info-label {}
+.teacher-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-.teacher-lesson-info {}
+.teacher-level p {
+  display: inline-block;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+  border-radius: 35px;
+  padding: 8px 12px;
+}
 
-.teacher-conditions {}
+.teacher-level:first-child p {
+  background-color: #f4c550;
+}
 
-.teacher-read-more {}
-
-.teacher-levels {}
-
-.teacher-level {}
+.load-more-btn {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+  border-radius: 12px;
+  padding: 16px 48px;
+  width: 183px;
+  height: 60px;
+  background-color: #f4c550;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 @media screen and (min-width: 768px) {}
 
