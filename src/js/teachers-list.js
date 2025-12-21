@@ -1,8 +1,9 @@
 import { createTeacherCard } from './teacher-card.js';
 import { fetchTeachers } from './teachers-api.js';
+import { init } from '../main.js';
 
-const teacherList = document.querySelector('.teachers-list'); // ul
 //  це - ul - сюди вставляється  - li (createTeacherCard)
+const teacherList = document.querySelector('.teachers-list'); // ul
 
 const loadMoreBtn = document.querySelector('.load-more-btn'); //кнопка
 
@@ -11,13 +12,13 @@ const perPage = 4;
 let currentPage = 1;
 let allTeachers = [];
 
-async function init() {
-  //отримую всіх викладачів
-  allTeachers = await fetchTeachers();
+export function setTeachers(teachers) {
+  allTeachers = teachers;
+  currentPage = 1;
   renderTeachers();
 }
 
-function renderTeachers() {
+export function renderTeachers() {
   const end = currentPage * perPage;
 
   const teachersForRender = allTeachers.slice(0, end);
@@ -38,5 +39,3 @@ loadMoreBtn.addEventListener('click', () => {
   currentPage += 1;
   renderTeachers();
 });
-
-init();
