@@ -5,6 +5,7 @@ const API_TEACHERS =
 
 export async function fetchTeachers() {
   const response = await axios.get(API_TEACHERS);
+
   if (!response.data) {
     return [];
   }
