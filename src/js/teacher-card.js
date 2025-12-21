@@ -27,8 +27,8 @@ export function createTeacherCard(teacher) {
       <div class="teacher-meta">
 
         <p class="teacher-lessons-online">
-          <svg width="16" height="16" class="svg-book">
-            <use href="/img/sprite.svg#icon-book-open"></use>
+                    <svg width="16" height="16" class="svg-book">
+            <use href="/img/book-open.svg"></use>
           </svg>
           Lessons online
         </p>

@@ -92,6 +92,14 @@
   line-height: 150%;
 }
 
+.teacher-lessons-online,
+.teacher-rating {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+
 .price-color {
   color: #38cd3e;
 }
@@ -100,6 +108,11 @@
   border: none;
   background-color: white;
   margin-bottom: 12px;
+}
+
+.svg-book {
+  /* stroke: red; */
+  /* fill: blue; */
 }
 
 .svg-heart {
