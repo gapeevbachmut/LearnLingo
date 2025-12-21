@@ -7,6 +7,7 @@ import { fetchTeachers } from './js/teachers-api.js';
 import { setTeachers } from './js/teachers-list.js';
 import { createLanguageFilter } from './js/filter-language.js';
 import { createLevelFilter } from './js/filter-level.js';
+import { createPriceFilter } from './js/filter-price.js';
 
 export async function init() {
   const teachers = await fetchTeachers();
@@ -14,6 +15,8 @@ export async function init() {
   setTeachers(teachers);
   createLanguageFilter(teachers);
   createLevelFilter(teachers);
+  createPriceFilter(teachers);
+  // console.log('teachers from API:', teachers);
 }
 
 init();
