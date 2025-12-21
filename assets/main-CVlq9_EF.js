@@ -24,8 +24,8 @@ import{a as d}from"./vendor-BWC8OeqA.js";(function(){const a=document.createElem
       <div class="teacher-meta">
 
         <p class="teacher-lessons-online">
-          <svg width="16" height="16" class="svg-book">
-            <use href="/img/sprite.svg#icon-book-open"></use>
+                    <svg width="16" height="16" class="svg-book">
+            <use href="/img/book-open.svg"></use>
           </svg>
           Lessons online
         </p>
@@ -85,4 +85,4 @@ ${e.levels.map(a=>`<li class='teacher-level'><p>#${a}</p></li>`).join("")}
   </div>
 </li>
     `}const h="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function g(){const e=await d.get(h);return e.data?Object.values(e.data):[]}const f=document.querySelector(".teachers-list"),i=document.querySelector(".load-more-btn"),v=4;let l=1,c=[];async function m(){c=await g(),p()}function p(){const e=l*v,a=c.slice(0,e),r=a.map(n=>u(n)).join("");f.innerHTML=r,a.length>=c.length&&(i.style.display="none")}i.addEventListener("click",()=>{l+=1,p()});m();const y=new Date;document.querySelector(".footer-date");const b=document.querySelector(".date-year");b.textContent=y.getFullYear();
-//# sourceMappingURL=main-WOCeEEy0.js.map
+//# sourceMappingURL=main-CVlq9_EF.js.map
