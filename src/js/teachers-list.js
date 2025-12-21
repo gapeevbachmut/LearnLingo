@@ -10,10 +10,10 @@ const loadMoreBtn = document.querySelector('.load-more-btn'); //кнопка
 // пагінація клієнтська!!!!!!!!!!!
 const perPage = 4;
 let currentPage = 1;
-let allTeachers = [];
+let allTeachers = []; //копія БД
 
 export function setTeachers(teachers) {
-  allTeachers = teachers;
+  allTeachers = teachers; //teachers приходить з main.js
   currentPage = 1;
   renderTeachers();
 }

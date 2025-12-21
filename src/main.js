@@ -6,12 +6,14 @@ import './js/footer.js';
 import { fetchTeachers } from './js/teachers-api.js';
 import { setTeachers } from './js/teachers-list.js';
 import { createLanguageFilter } from './js/filter-language.js';
+import { createLevelFilter } from './js/filter-level.js';
 
 export async function init() {
   const teachers = await fetchTeachers();
 
   setTeachers(teachers);
   createLanguageFilter(teachers);
+  createLevelFilter(teachers);
 }
 
 init();
