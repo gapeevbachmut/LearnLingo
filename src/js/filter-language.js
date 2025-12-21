@@ -7,8 +7,8 @@ let allTeachers = [];
 export function createLanguageFilter(teachers) {
   allTeachers = teachers;
 
-  const langusges = teachers.flatMap(teacher => teacher.languages); // збираю всі мови
-  const uniqueLanguages = [...new Set(langusges)]; // прибираю повтор
+  const languages = teachers.flatMap(teacher => teacher.languages); // збираю всі мови
+  const uniqueLanguages = [...new Set(languages)]; // прибираю повтор
 
   uniqueLanguages.forEach(lang => {
     // для кожної мови ячейка
@@ -29,7 +29,7 @@ filterLanguage.addEventListener('change', event => {
   }
 
   const filteredTeachers = allTeachers.filter(teacher =>
-    teacher.langusges.includes(selectLanguage)
+    teacher.languages.includes(selectLanguage)
   );
   setTeachers(filteredTeachers);
 });
