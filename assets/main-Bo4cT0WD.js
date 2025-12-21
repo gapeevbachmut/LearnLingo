@@ -1,4 +1,4 @@
-import{a as d}from"./vendor-BWC8OeqA.js";(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const t of s)if(t.type==="childList")for(const o of t.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function r(s){const t={};return s.integrity&&(t.integrity=s.integrity),s.referrerPolicy&&(t.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?t.credentials="include":s.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(s){if(s.ep)return;s.ep=!0;const t=r(s);fetch(s.href,t)}})();function u(e){return`
+import{a as h}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))a(s);new MutationObserver(s=>{for(const n of s)if(n.type==="childList")for(const o of n.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function r(s){const n={};return s.integrity&&(n.integrity=s.integrity),s.referrerPolicy&&(n.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?n.credentials="include":s.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function a(s){if(s.ep)return;s.ep=!0;const n=r(s);fetch(s.href,n)}})();function f(e){return`
 <li class="teacher-card">
   <!-- Avatar -->
   <div class="teacher-avatar">
@@ -78,11 +78,11 @@ ${e.conditions}      </p>
 
     <!-- Levels -->
     <ul class="teacher-levels">
-${e.levels.map(a=>`<li class='teacher-level'><p>#${a}</p></li>`).join("")}
+${e.levels.map(t=>`<li class='teacher-level'><p>#${t}</p></li>`).join("")}
 
     </ul>
 
   </div>
 </li>
-    `}const h="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function g(){const e=await d.get(h);return e.data?Object.values(e.data):[]}const f=document.querySelector(".teachers-list"),i=document.querySelector(".load-more-btn"),v=4;let l=1,c=[];async function m(){c=await g(),p()}function p(){const e=l*v,a=c.slice(0,e),r=a.map(n=>u(n)).join("");f.innerHTML=r,a.length>=c.length&&(i.style.display="none")}i.addEventListener("click",()=>{l+=1,p()});m();const y=new Date;document.querySelector(".footer-date");const b=document.querySelector(".date-year");b.textContent=y.getFullYear();
-//# sourceMappingURL=main-CVlq9_EF.js.map
+    `}const v="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function m(){const e=await h.get(v);return e.data?Object.values(e.data):[]}const y=document.querySelector(".teachers-list"),d=document.querySelector(".load-more-btn"),b=4;let p=1,c=[];function i(e){c=e,p=1,g()}function g(){const e=p*b,t=c.slice(0,e),r=t.map(a=>f(a)).join("");y.innerHTML=r,t.length>=c.length&&(d.style.display="none")}d.addEventListener("click",()=>{p+=1,g()});const l=document.querySelector(".language");let u=[];function L(e){u=e;const t=e.flatMap(a=>a.languages);[...new Set(t)].forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=a,l.append(s)}),l.value=""}l.addEventListener("change",e=>{const t=e.target.value;if(!t){i(u);return}const r=u.filter(a=>a.langusges.includes(t));i(r)});const $=new Date;document.querySelector(".footer-date");const w=document.querySelector(".date-year");w.textContent=$.getFullYear();async function S(){const e=await m();i(e),L(e)}S();
+//# sourceMappingURL=main-Bo4cT0WD.js.map
