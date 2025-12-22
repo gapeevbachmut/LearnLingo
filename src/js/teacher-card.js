@@ -3,12 +3,13 @@ export function createTeacherCard(teacher) {
 <li class="teacher-card">
   <!-- Avatar -->
   <div class="teacher-avatar">
-    <img src='${teacher.avatar_url}' alt="${
-    teacher.name
-  }" class="teacher-avatar-img" width="96"
+    <img src='${
+      teacher.avatar_url || '../img/main-content/default-avatar.png'
+    } '
+     alt="${teacher.name || 'Teacher'} " class="teacher-avatar-img" width="96"
       height="96" />
     <svg width="12" height="12" class="teacher-avatar-svg">
-      <use href="./img/sprite.svg#icon-group"></use>
+      <use href="#icon-group"></use>
     </svg>
   </div>
 
@@ -28,7 +29,7 @@ export function createTeacherCard(teacher) {
 
         <p class="teacher-lessons-online">
                     <svg width="16" height="16" class="svg-book">
-            <use href="./img/sprite.svg#icon-book-open"></use>
+            <use href="#icon-book-open"></use>
           </svg>
           Lessons online
         </p>
@@ -39,7 +40,7 @@ export function createTeacherCard(teacher) {
         <span class="teacher-separator">|</span>
         <p class="teacher-rating">
           <svg width="16" height="16" class="svg-star">
-            <use href="./img/sprite.svg#icon-star"></use>
+            <use href="#icon-star"></use>
           </svg>
           Rating: <span>${teacher.rating}</span>
         </p>
@@ -51,7 +52,7 @@ export function createTeacherCard(teacher) {
         </p>
         <button class="teacher-like-btn" type="button">
           <svg width="16" height="16" class="svg-heart">
-            <use href="./img/sprite.svg#icon-normal"></use>
+            <use href="#icon-normal"></use>
           </svg>
         </button>
       </div>

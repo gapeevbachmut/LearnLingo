@@ -1,8 +1,8 @@
-import spriteUrl from '../img/sprite.svg&raw';
+import spriteUrl from '../img/sprite.svg?raw';
 
 export function injectSvgSprite() {
-  const div = document.createElement('div');
-  div.style.display = 'none';
-  div.innerHTML = spriteUrl;
-  document.body.insertBefore(div, document.body.firstChild);
+  const svg = document.createElement('svg');
+  svg.style.display = 'none';
+  svg.innerHTML = spriteUrl;
+  document.body.prepend(svg);
 }
