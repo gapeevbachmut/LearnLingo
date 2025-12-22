@@ -1,0 +1,8 @@
+.teacher-extra {
+  margin-top: 16px;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.is-hidden {
+  display: none;
+}
