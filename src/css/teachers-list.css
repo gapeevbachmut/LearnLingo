@@ -213,7 +213,19 @@
   background-color: #cba443;
 }
 
+.svg-up {
+  fill: #ffdc86;
+}
 
+.scroll-top:hover,
+.scroll-top:focus {
+  background-color: #ffdc86;
+}
+
+.scroll-top:hover .svg-up,
+.scroll-top:focus .svg-up {
+  fill: #f4c550;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -260,9 +272,7 @@
   .trial-lesson-btn:hover,
   .trial-lesson-btn:focus,
   .load-more-btn:hover,
-  .load-more-btn:focus,
-  .scroll-top:hover,
-  .scroll-top:focus {
+  .load-more-btn:focus {
     background-color: #ffdc86;
   }
 }
