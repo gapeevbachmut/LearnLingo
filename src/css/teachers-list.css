@@ -301,6 +301,11 @@
     margin-top: 64px;
     margin-bottom: 64px;
   }
+
+  .scroll-top {
+    right: 124px;
+    bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1440px) {
