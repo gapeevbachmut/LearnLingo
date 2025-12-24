@@ -194,6 +194,26 @@
   margin-bottom: 20px;
 }
 
+.scroll-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #f4c550;
+  stroke: var(--gray);
+  fill: var(--gray);
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.scroll-top:active {
+  background-color: #cba443;
+}
+
+
 
 
 @media screen and (min-width: 768px) {
@@ -240,7 +260,9 @@
   .trial-lesson-btn:hover,
   .trial-lesson-btn:focus,
   .load-more-btn:hover,
-  .load-more-btn:focus {
+  .load-more-btn:focus,
+  .scroll-top:hover,
+  .scroll-top:focus {
     background-color: #ffdc86;
   }
 }
