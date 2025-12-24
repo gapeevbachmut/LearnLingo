@@ -1,4 +1,6 @@
+import { modalWindow } from './modal.js';
 import { createTeacherCard } from './teacher-card.js';
+
 // import { fetchTeachers } from './teachers-api.js';
 // import { init } from '../main.js';
 
@@ -72,6 +74,12 @@ teacherList.addEventListener('click', event => {
     readMoreBtn.classList.add('is-hidden');
     trialLessonBtn.classList.remove('is-hidden');
   }
+
+  const openModal = () => {
+    console.log('modal open');
+    modalWindow();
+  };
+  trialLessonBtn.addEventListener('click', openModal);
 });
 
 // -------------  scroll  top
