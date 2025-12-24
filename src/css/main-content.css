@@ -121,6 +121,11 @@
     margin: 0;
   }
 
+  .main-text-btn:hover,
+  .main-text-btn:focus {
+    background-color: #ffdc86;
+  }
+
   .stat-list {
     display: flex;
     flex-wrap: wrap;

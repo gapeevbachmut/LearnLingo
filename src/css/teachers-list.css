@@ -236,6 +236,13 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
+
+  .trial-lesson-btn:hover,
+  .trial-lesson-btn:focus,
+  .load-more-btn:hover,
+  .load-more-btn:focus {
+    background-color: #ffdc86;
+  }
 }
 
 @media screen and (min-width: 1200px) {
