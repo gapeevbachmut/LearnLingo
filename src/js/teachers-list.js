@@ -1,6 +1,6 @@
 import { createTeacherCard } from './teacher-card.js';
-import { fetchTeachers } from './teachers-api.js';
-import { init } from '../main.js';
+// import { fetchTeachers } from './teachers-api.js';
+// import { init } from '../main.js';
 
 //  це - ul - сюди вставляється  - li (createTeacherCard)
 const teacherList = document.querySelector('.teachers-list'); // ul
@@ -42,29 +42,34 @@ loadMoreBtn.addEventListener('click', () => {
 
 teacherList.addEventListener('click', event => {
   //ловиться клік по всьому списку
-  const btn = event.target.closest('.teacher-read-more');
-  if (!btn) return; // якщо не кнопка - нічого не робиться!!!
+  const readMoreBtn = event.target.closest('.teacher-read-more'); // кнопка на картці де був клік
+  if (!readMoreBtn) return; // якщо не кнопка - нічого не робиться!!!
 
-  const card = btn.closest('.teacher-card');
-  // картка вчителя
-  const extraBlock = card.querySelector('.teacher-extra');
+  const card = readMoreBtn.closest('.teacher-card'); // картка вчителя де був клік
+  const extraBlock = card.querySelector('.teacher-extra'); // прихований текст
+  const trialLessonBtn = card.querySelector('.trial-lesson-btn'); // BTN - Book trial lesson
 
-  const openedBlocks = teacherList.querySelectorAll(
-    // закриваю інші вікна
-    '.teacher-extra:not(.is-hidden)'
-  );
-
-  openedBlocks.forEach(block => {
-    if (block !== extraBlock) {
-      block.classList.add('is-hidden');
-      block
-        .closest('.teacher-card')
-        .querySelector('.teacher-read-more').textContent = 'Read more';
+  // закриваю інші картки
+  teacherList.querySelectorAll('.teacher-card').forEach(otherCard => {
+    if (otherCard !== card) {
+      otherCard.querySelector('.teacher-extra')?.classList.add('is-hidden');
+      otherCard.querySelector('.trial-lesson-btn')?.classList.add('is-hidden');
+      otherCard
+        .querySelector('.teacher-read-more')
+        ?.classList.remove('is-hidden');
     }
   });
 
-  //  перемикаю
+  // перемикаю поточну картку
   const isHidden = extraBlock.classList.toggle('is-hidden');
 
-  btn.textContent = isHidden ? 'Read more' : 'Read less';
+  if (isHidden) {
+    // закрити
+    readMoreBtn.classList.remove('is-hidden');
+    trialLessonBtn.classList.add('is-hidden');
+  } else {
+    //  відкрити
+    readMoreBtn.classList.add('is-hidden');
+    trialLessonBtn.classList.remove('is-hidden');
+  }
 });

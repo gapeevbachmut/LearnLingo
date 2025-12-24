@@ -149,6 +149,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-top: 24px;
 }
 
 .teacher-level p {
@@ -160,6 +161,21 @@
 
 .teacher-level:first-child p {
   background-color: #f4c550;
+}
+
+.trial-lesson-btn {
+  border-radius: 12px;
+  border: none;
+  padding: 16px 48px;
+  width: 232px;
+  height: 60px;
+  background-color: #f4c550;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 156%;
+  color: #121417;
+  margin-top: 24px;
 }
 
 .load-more-btn {
@@ -177,6 +193,8 @@
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .teacher-content {
