@@ -24,7 +24,7 @@ export function renderTeachers() {
   const teachersForRender = allTeachers.slice(0, end);
 
   const markup = teachersForRender
-    .map(teacher => createTeacherCard(teacher))
+    .map((teacher, index) => createTeacherCard(teacher, index))
     .join('');
 
   teacherList.innerHTML = markup;
@@ -75,9 +75,13 @@ teacherList.addEventListener('click', event => {
     trialLessonBtn.classList.remove('is-hidden');
   }
 
-  const openModal = () => {
-    console.log('modal open');
-    modalWindow();
+  const teacherIndex = Number(card.dataset.index);
+
+  const teacher = allTeachers[teacherIndex];
+
+  const openModal = event => {
+    event.stopPropagation();
+    modalWindow(teacher);
   };
   trialLessonBtn.addEventListener('click', openModal);
 });

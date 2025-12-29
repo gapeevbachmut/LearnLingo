@@ -1,8 +1,8 @@
 import { createTeacherExtra } from './teacher-extra';
 
-export function createTeacherCard(teacher) {
+export function createTeacherCard(teacher, index) {
   return `
-<li class="teacher-card">
+<li class="teacher-card" data-index="${index}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${
@@ -95,7 +95,7 @@ ${teacher.levels
 
     </ul>
 
-    <button type='button' class="trial-lesson-btn is-hidden">Book trial lesson</button>
+    <button type='button' class="trial-lesson-btn is-hidden" ${teacher}>Book trial lesson</button>
 
   </div>
 </li>
