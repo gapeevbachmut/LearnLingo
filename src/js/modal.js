@@ -1,12 +1,22 @@
+import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
+
 const modalRoot = document.querySelector('#modal-root');
 
 export function modalWindow() {
-  modalRoot.innerHTML = `
-    <section class="backdrop">
-      <div class="modal">
-        <h2>Modal Title</h2>
-        <p>This is some content inside the modal.</p>
-      </div>
-    </section>
-  `;
+  const backdrop = document.querySelector('.backdrop');
+
+  // backdrop.addEventListener('click', event => {
+  //   if (event.target === backdrop) {
+  //     modalRoot.innerHTML = '';
+  //   }
+  // });
+
+  const closeModal = document.querySelector('.closeButton');
+  // closeModal.addEventListener('click', event => {
+  //   if (event.target === closeModal) {
+  //     modalRoot.innerHTML = '';
+  //   }
+  // });
+
+  modalRoot.innerHTML = createMarkupTrialLesson();
 }
