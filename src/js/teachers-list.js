@@ -49,6 +49,7 @@ teacherList.addEventListener('click', event => {
 
   const card = readMoreBtn.closest('.teacher-card'); // картка вчителя де був клік
   const extraBlock = card.querySelector('.teacher-extra'); // прихований текст
+
   const trialLessonBtn = card.querySelector('.trial-lesson-btn'); // BTN - Book trial lesson
 
   // закриваю інші картки
@@ -83,6 +84,7 @@ teacherList.addEventListener('click', event => {
     event.stopPropagation();
     modalWindow(teacher);
   };
+  if (!trialLessonBtn) return;
   trialLessonBtn.addEventListener('click', openModal);
 });
 
