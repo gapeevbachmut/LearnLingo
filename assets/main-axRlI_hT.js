@@ -1,4 +1,4 @@
-import{a as x}from"./vendor-BWC8OeqA.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const a of t)if(a.type==="childList")for(const l of a.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function o(t){const a={};return t.integrity&&(a.integrity=t.integrity),t.referrerPolicy&&(a.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?a.credentials="include":t.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(t){if(t.ep)return;t.ep=!0;const a=o(t);fetch(t.href,a)}})();const $=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{a as $}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const l of a.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function o(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(s){if(s.ep)return;s.ep=!0;const a=o(s);fetch(s.href,a)}})();const x=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -34,38 +34,48 @@ import{a as x}from"./vendor-BWC8OeqA.js";(function(){const s=document.createElem
 </symbol>
   </defs>
 </svg>
-`;function E(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=$,document.body.prepend(e)}function q(e){return`
+`;function E(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=x,document.body.prepend(e)}function q(e){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
-        <h2>Modal Title</h2>
-        <p>This is some content inside the modal.</p>
-        <h2>${e.name}</h2>
+      <div><h1>Book trial lesson</h1>
+        <p>Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs.</p>
+         </div>
+
+         <div>
+         <div>
+   <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
+     alt="${e.name||"Teacher"} " class="form-avatar" width="44"
+      height="44" />         </div>
+         <p>Your teacher</p>
+         <h2>${e.name} ${e.surname}</h2>
+         </div>
+
       </div>
     </section>
-  `}const i=document.querySelector("#modal-root");function T(){document.body.classList.add("no-scroll")}function z(){document.body.classList.remove("no-scroll")}function B(e){i.innerHTML=q(e),T();const s=i.querySelector(".backdrop"),o=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",z(),document.removeEventListener("keydown",t)},t=a=>{a.key==="Escape"&&n()};s.addEventListener("click",a=>{a.target===s&&n()}),o.addEventListener("click",n),document.addEventListener("keydown",t)}function C(e){return`
+  `}const i=document.querySelector("#modal-root");function T(){document.body.classList.add("no-scroll")}function B(){document.body.classList.remove("no-scroll")}function z(e){i.innerHTML=q(e),T();const t=i.querySelector(".backdrop"),o=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",B(),document.removeEventListener("keydown",s)},s=a=>{a.key==="Escape"&&n()};t.addEventListener("click",a=>{a.target===t&&n()}),o.addEventListener("click",n),document.addEventListener("keydown",s)}function C(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
 
     <h3 class="is-hidden">Reviews</h3>
     <ul class="teacher-reviews">
-      ${e.reviews.map(s=>`
+      ${e.reviews.map(t=>`
           <li class="review-item">
-            <p class="review-title"><span class="review-name">${s.reviewer_name}</span>
+            <p class="review-title"><span class="review-name">${t.reviewer_name}</span>
             <span> <svg width="16" height="16" class="svg-star">
             <use href="#icon-star"></use>
           </svg></span>
-              <span>${s.reviewer_rating.toFixed(1)}</span>
+              <span>${t.reviewer_rating.toFixed(1)}</span>
 
             </p>
-            <p class="review-comment">${s.comment}</p>
+            <p class="review-comment">${t.comment}</p>
           </li>
         `).join("")}
     </ul>
   </div>
-    `}function P(e,s){return`
-<li class="teacher-card" data-index="${s}">
+    `}function P(e,t){return`
+<li class="teacher-card" data-index="${t}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
@@ -156,5 +166,5 @@ ${e.levels.map(o=>`<li class='teacher-level'><p>#${o}</p></li>`).join("")}
 
   </div>
 </li>
-    `}const u=document.querySelector(".teachers-list"),L=document.querySelector(".load-more-btn"),A=4;let b=1,d=[];function c(e){d=e,b=1,w()}function w(){const e=b*A,s=d.slice(0,e),o=s.map((n,t)=>P(n,t)).join("");u.innerHTML=o,s.length>=d.length&&(L.style.display="none")}L.addEventListener("click",()=>{b+=1,w()});u.addEventListener("click",e=>{const s=e.target.closest(".teacher-read-more");if(!s)return;const o=s.closest(".teacher-card"),n=o.querySelector(".teacher-extra"),t=o.querySelector(".trial-lesson-btn");u.querySelectorAll(".teacher-card").forEach(r=>{r!==o&&(r.querySelector(".teacher-extra")?.classList.add("is-hidden"),r.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),r.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),n.classList.toggle("is-hidden")?(s.classList.remove("is-hidden"),t.classList.add("is-hidden")):(s.classList.add("is-hidden"),t.classList.remove("is-hidden"));const l=Number(o.dataset.index),S=d[l],M=r=>{r.stopPropagation(),B(S)};t.addEventListener("click",M)});const p=document.querySelector(".scroll-top"),k=()=>{window.scrollY>350?p.classList.remove("is-hidden"):p.classList.add("is-hidden")};window.addEventListener("scroll",k);k();const _=()=>window.scrollTo({top:0,behavior:"smooth"});p.addEventListener("click",_);const h=document.querySelector(".language");let f=[];function j(e){f=e;const s=e.flatMap(n=>n.languages);[...new Set(s)].forEach(n=>{const t=document.createElement("option");t.value=n,t.textContent=n,h.append(t)}),h.value=""}h.addEventListener("change",e=>{const s=e.target.value;if(!s){c(f);return}const o=f.filter(n=>n.languages.includes(s));c(o)});const H=new Date;document.querySelector(".footer-date");const F=document.querySelector(".date-year");F.textContent=H.getFullYear();const O="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function R(){const e=await x.get(O);return e.data?Object.values(e.data):[]}const v=document.querySelector(".level");let m=[];function N(e){m=e;const s=e.flatMap(n=>n.levels);[...new Set(s)].forEach(n=>{const t=document.createElement("option");t.value=n,t.textContent=n,v.append(t)}),v.value=""}v.addEventListener("change",e=>{const s=e.target.value;if(!s){c(m);return}const o=m.filter(n=>n.levels.includes(s));c(o)});const g=document.querySelector(".price");let y=[];function V(e){y=e;const s=e.map(n=>n.price_per_hour);[...new Set(s)].sort((n,t)=>n-t).forEach(n=>{const t=document.createElement("option");t.value=n,t.textContent=`${n} $`,g.append(t)}),g.value=""}g.addEventListener("change",e=>{const s=e.target.value,o=Number(s);if(!s){c(y);return}const n=y.filter(t=>t.price_per_hour===o);c(n)});E();async function I(){const e=await R();c(e),j(e),N(e),V(e)}I();
-//# sourceMappingURL=main-BTrnR0r-.js.map
+    `}const u=document.querySelector(".teachers-list"),w=document.querySelector(".load-more-btn"),_=4;let b=1,d=[];function c(e){d=e,b=1,L()}function L(){const e=b*_,t=d.slice(0,e),o=t.map((n,s)=>P(n,s)).join("");u.innerHTML=o,t.length>=d.length&&(w.style.display="none")}w.addEventListener("click",()=>{b+=1,L()});u.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const o=t.closest(".teacher-card"),n=o.querySelector(".teacher-extra"),s=o.querySelector(".trial-lesson-btn");u.querySelectorAll(".teacher-card").forEach(r=>{r!==o&&(r.querySelector(".teacher-extra")?.classList.add("is-hidden"),r.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),r.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),n.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const l=Number(o.dataset.index),S=d[l],M=r=>{r.stopPropagation(),z(S)};s&&s.addEventListener("click",M)});const p=document.querySelector(".scroll-top"),k=()=>{window.scrollY>350?p.classList.remove("is-hidden"):p.classList.add("is-hidden")};window.addEventListener("scroll",k);k();const A=()=>window.scrollTo({top:0,behavior:"smooth"});p.addEventListener("click",A);const h=document.querySelector(".language");let f=[];function j(e){f=e;const t=e.flatMap(n=>n.languages);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,h.append(s)}),h.value=""}h.addEventListener("change",e=>{const t=e.target.value;if(!t){c(f);return}const o=f.filter(n=>n.languages.includes(t));c(o)});const H=new Date;document.querySelector(".footer-date");const O=document.querySelector(".date-year");O.textContent=H.getFullYear();const F="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function R(){const e=await $.get(F);return e.data?Object.values(e.data):[]}const v=document.querySelector(".level");let m=[];function N(e){m=e;const t=e.flatMap(n=>n.levels);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,v.append(s)}),v.value=""}v.addEventListener("change",e=>{const t=e.target.value;if(!t){c(m);return}const o=m.filter(n=>n.levels.includes(t));c(o)});const g=document.querySelector(".price");let y=[];function V(e){y=e;const t=e.map(n=>n.price_per_hour);[...new Set(t)].sort((n,s)=>n-s).forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=`${n} $`,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value,o=Number(t);if(!t){c(y);return}const n=y.filter(s=>s.price_per_hour===o);c(n)});E();async function I(){const e=await R();c(e),j(e),N(e),V(e)}I();
+//# sourceMappingURL=main-axRlI_hT.js.map
