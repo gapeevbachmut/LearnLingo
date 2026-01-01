@@ -18,6 +18,8 @@
   border-radius: 8px;
   background-color: #fff;
   padding: 24px;
+  overflow: auto;
+  background: #fff;
 }
 
 
@@ -27,13 +29,10 @@
   right: 8px;
   background: #fff;
   border: none;
-  border-radius: 4px;
   width: 32px;
   height: 32px;
-  font-size: 20px;
-  line-height: 0;
-  color: #333;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  font-size: 28px;
+  color: #121417;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -51,4 +50,159 @@
 
 .no-scroll {
   overflow: hidden;
+}
+
+
+/* ------------------------------- */
+
+.box-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.modal-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #121417;
+}
+
+.modal-text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  color: rgba(18, 20, 23, 0.8);
+}
+
+.box-teacher {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.img-teacher-box {
+  border-radius: 100px;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+}
+
+.teacher-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.teacher-info-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 133%;
+  color: #8a8a89;
+}
+
+.teacher-info-name {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #121417;
+}
+
+.form-ask {
+  border: none;
+}
+
+.form-ask {
+  margin-bottom: 20px;
+}
+
+.form-ask-title {
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 133%;
+  color: #121417;
+}
+
+.form-ask-label {
+  display: flex;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  text-align: center;
+  color: #121417;
+}
+
+.form-user {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-user-input {
+  border: 1px solid rgba(18, 20, 23, 0.1);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+/* -------------------------------- */
+
+input::placeholder {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 138%;
+  color: #121417;
+}
+
+input:hover::placeholder,
+input:focus::placeholder {
+  color: #f4c550;
+}
+
+/* input:placeholder-shown {
+  border-color: #f4c550;
+} */
+
+form:focus-within {
+  border-color: blue;
+  /* додати тінь на форму -  та активний елемент */
+}
+
+/* ---------------------------------- */
+
+.btn-form-lesson {
+  border-radius: 12px;
+  border: none;
+  padding: 10px;
+  background-color: #f4c550;
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  /* margin: 0 auto; */
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    border-radius: 30px;
+    width: 599px;
+    height: auto;
+    padding: 64px;
+  }
+
+  .closeButton {
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+  }
 }
