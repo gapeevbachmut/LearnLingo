@@ -1,4 +1,4 @@
-import{a as $}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const a of s)if(a.type==="childList")for(const l of a.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function o(s){const a={};return s.integrity&&(a.integrity=s.integrity),s.referrerPolicy&&(a.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?a.credentials="include":s.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function n(s){if(s.ep)return;s.ep=!0;const a=o(s);fetch(s.href,a)}})();const x=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))a(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&a(c)}).observe(document,{childList:!0,subtree:!0});function n(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(s){if(s.ep)return;s.ep=!0;const o=n(s);fetch(s.href,o)}})();const $=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -34,26 +34,65 @@ import{a as $}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
 </symbol>
   </defs>
 </svg>
-`;function E(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=x,document.body.prepend(e)}function q(e){return`
+`;function E(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=$,document.body.prepend(e)}function q(e){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
-      <div><h1>Book trial lesson</h1>
-        <p>Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs.</p>
+      <div class="box-title">
+      <h1 class="modal-title">Book trial lesson</h1>
+        <p class="modal-text">Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs.</p>
          </div>
 
-         <div>
-         <div>
+         <div class="box-teacher">
+         <div class="img-teacher-box">
    <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
      alt="${e.name||"Teacher"} " class="form-avatar" width="44"
-      height="44" />         </div>
-         <p>Your teacher</p>
-         <h2>${e.name} ${e.surname}</h2>
+      height="44" />
+             </div>
+             <div class="teacher-info">
+            <p class="teacher-info-title">Your teacher</p>
+         <h2 class="teacher-info-name">${e.name} ${e.surname}</h2>
+             </div>
+
          </div>
+
+     <form class="form-lesson" name="trial_lesson" autocomplete="off">
+       <fieldset class="form-ask">
+         <legend class="form-ask-title">What is your main reason for learning English?</legend>
+         <label class="form-ask-label">
+          <input type="radio" name="lesson" value="Career-and-business" checked/>
+             Career and business</label>
+         <label class="form-ask-label">
+           <input type="radio" name="lesson" value="Lesson-for-kids"/>
+             Lesson for kids</label>
+         <label class="form-ask-label">
+           <input type="radio" name="lesson" value="Living-abroad"/>
+             Living abroad</label>
+         <label class="form-ask-label">
+           <input type="radio" name="lesson" value="Exams-and-coursework"/>
+             Exams and coursework</label>
+         <label class="form-ask-label">
+           <input type="radio" name="lesson" value="travel-or-hobby"/>
+             Culture, travel or hobby</label>
+
+         </fieldset>
+
+
+       <fieldset class="form-user">
+         <input class="form-user-input" type="text" name="username" placeholder="Full Name" autofocus/>
+         <input class="form-user-input" type="email" name="email" placeholder="Email"/>
+         <input class="form-user-input" type="tel" name="phone-number" placeholder="Phone number"/>
+         </fieldset>
+
+
+
+
+         <button class="btn-form-lesson" type="submit">Trial lesson</button>
+         </form>
 
       </div>
     </section>
-  `}const i=document.querySelector("#modal-root");function T(){document.body.classList.add("no-scroll")}function B(){document.body.classList.remove("no-scroll")}function z(e){i.innerHTML=q(e),T();const t=i.querySelector(".backdrop"),o=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",B(),document.removeEventListener("keydown",s)},s=a=>{a.key==="Escape"&&n()};t.addEventListener("click",a=>{a.target===t&&n()}),o.addEventListener("click",n),document.addEventListener("keydown",s)}function C(e){return`
+  `}const i=document.querySelector("#modal-root");function T(){document.body.classList.add("no-scroll")}function B(){document.body.classList.remove("no-scroll")}function C(e){i.innerHTML=q(e),T();const t=i.querySelector(".backdrop"),n=i.querySelector(".closeButton"),a=()=>{i.innerHTML="",B(),document.removeEventListener("keydown",s)},s=o=>{o.key==="Escape"&&a()};t.addEventListener("click",o=>{o.target===t&&a()}),n.addEventListener("click",a),document.addEventListener("keydown",s)}function z(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
@@ -153,12 +192,12 @@ ${e.conditions}      </p>
       Read more
     </button>
     <!-- ---------------------   teacher-extra   ------------------------------ -->
-${C(e)}
+${z(e)}
     <!-- ---------------------------------------------------------------------- -->
 
     <!-- Levels -->
     <ul class="teacher-levels">
-${e.levels.map(o=>`<li class='teacher-level'><p>#${o}</p></li>`).join("")}
+${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
 
     </ul>
 
@@ -166,5 +205,5 @@ ${e.levels.map(o=>`<li class='teacher-level'><p>#${o}</p></li>`).join("")}
 
   </div>
 </li>
-    `}const u=document.querySelector(".teachers-list"),w=document.querySelector(".load-more-btn"),_=4;let b=1,d=[];function c(e){d=e,b=1,L()}function L(){const e=b*_,t=d.slice(0,e),o=t.map((n,s)=>P(n,s)).join("");u.innerHTML=o,t.length>=d.length&&(w.style.display="none")}w.addEventListener("click",()=>{b+=1,L()});u.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const o=t.closest(".teacher-card"),n=o.querySelector(".teacher-extra"),s=o.querySelector(".trial-lesson-btn");u.querySelectorAll(".teacher-card").forEach(r=>{r!==o&&(r.querySelector(".teacher-extra")?.classList.add("is-hidden"),r.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),r.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),n.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const l=Number(o.dataset.index),S=d[l],M=r=>{r.stopPropagation(),z(S)};s&&s.addEventListener("click",M)});const p=document.querySelector(".scroll-top"),k=()=>{window.scrollY>350?p.classList.remove("is-hidden"):p.classList.add("is-hidden")};window.addEventListener("scroll",k);k();const A=()=>window.scrollTo({top:0,behavior:"smooth"});p.addEventListener("click",A);const h=document.querySelector(".language");let f=[];function j(e){f=e;const t=e.flatMap(n=>n.languages);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,h.append(s)}),h.value=""}h.addEventListener("change",e=>{const t=e.target.value;if(!t){c(f);return}const o=f.filter(n=>n.languages.includes(t));c(o)});const H=new Date;document.querySelector(".footer-date");const O=document.querySelector(".date-year");O.textContent=H.getFullYear();const F="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function R(){const e=await $.get(F);return e.data?Object.values(e.data):[]}const v=document.querySelector(".level");let m=[];function N(e){m=e;const t=e.flatMap(n=>n.levels);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,v.append(s)}),v.value=""}v.addEventListener("change",e=>{const t=e.target.value;if(!t){c(m);return}const o=m.filter(n=>n.levels.includes(t));c(o)});const g=document.querySelector(".price");let y=[];function V(e){y=e;const t=e.map(n=>n.price_per_hour);[...new Set(t)].sort((n,s)=>n-s).forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=`${n} $`,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value,o=Number(t);if(!t){c(y);return}const n=y.filter(s=>s.price_per_hour===o);c(n)});E();async function I(){const e=await R();c(e),j(e),N(e),V(e)}I();
-//# sourceMappingURL=main-axRlI_hT.js.map
+    `}const u=document.querySelector(".teachers-list"),L=document.querySelector(".load-more-btn"),_=4;let y=1,d=[];function l(e){d=e,y=1,w()}function w(){const e=y*_,t=d.slice(0,e),n=t.map((a,s)=>P(a,s)).join("");u.innerHTML=n,t.length>=d.length&&(L.style.display="none")}L.addEventListener("click",()=>{y+=1,w()});u.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const n=t.closest(".teacher-card"),a=n.querySelector(".teacher-extra"),s=n.querySelector(".trial-lesson-btn");u.querySelectorAll(".teacher-card").forEach(r=>{r!==n&&(r.querySelector(".teacher-extra")?.classList.add("is-hidden"),r.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),r.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),a.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const c=Number(n.dataset.index),x=d[c],S=r=>{r.stopPropagation(),C(x)};s&&s.addEventListener("click",S)});const p=document.querySelector(".scroll-top"),k=()=>{window.scrollY>350?p.classList.remove("is-hidden"):p.classList.add("is-hidden")};window.addEventListener("scroll",k);k();const A=()=>window.scrollTo({top:0,behavior:"smooth"});p.addEventListener("click",A);const f=document.querySelector(".language");let h=[];function j(e){h=e;const t=e.flatMap(a=>a.languages);[...new Set(t)].forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=a,f.append(s)}),f.value=""}f.addEventListener("change",e=>{const t=e.target.value;if(!t){l(h);return}const n=h.filter(a=>a.languages.includes(t));l(n)});const H=new Date;document.querySelector(".footer-date");const F=document.querySelector(".date-year");F.textContent=H.getFullYear();const O="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function N(){const e=await M.get(O);return e.data?Object.values(e.data):[]}const m=document.querySelector(".level");let v=[];function R(e){v=e;const t=e.flatMap(a=>a.levels);[...new Set(t)].forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=a,m.append(s)}),m.value=""}m.addEventListener("change",e=>{const t=e.target.value;if(!t){l(v);return}const n=v.filter(a=>a.levels.includes(t));l(n)});const g=document.querySelector(".price");let b=[];function V(e){b=e;const t=e.map(a=>a.price_per_hour);[...new Set(t)].sort((a,s)=>a-s).forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=`${a} $`,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value,n=Number(t);if(!t){l(b);return}const a=b.filter(s=>s.price_per_hour===n);l(a)});E();async function I(){const e=await N();l(e),j(e),R(e),V(e)}I();
+//# sourceMappingURL=main-Eacb03ts.js.map
