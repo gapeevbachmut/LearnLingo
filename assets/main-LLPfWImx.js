@@ -1,4 +1,4 @@
-import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))a(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&a(c)}).observe(document,{childList:!0,subtree:!0});function n(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(s){if(s.ep)return;s.ep=!0;const o=n(s);fetch(s.href,o)}})();const $=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function a(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(s){if(s.ep)return;s.ep=!0;const o=a(s);fetch(s.href,o)}})();const E=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -34,7 +34,7 @@ import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
 </symbol>
   </defs>
 </svg>
-`;function E(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=$,document.body.prepend(e)}function q(e){return`
+`;function $(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=E,document.body.prepend(e)}function q(e){const t=document.querySelector(".form-lesson");t&&t.addEventListener("submit",a=>{a.preventDefault();const n=new FormData(t),s=Object.fromEntries(n.entries());console.log("FORM DATA:",s);const o=a.target,r=o.elements.lesson.value,u=o.elements.username.value,p=o.elements.email.value,l=o.elements.phoneNumber.value;console.log(r),console.log(u),console.log(p),console.log(l),e()},{once:!0})}function T(e){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -72,27 +72,27 @@ import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
            <input type="radio" name="lesson" value="Exams-and-coursework"/>
              Exams and coursework</label>
          <label class="form-ask-label">
-           <input type="radio" name="lesson" value="travel-or-hobby"/>
+           <input type="radio" name="lesson" value="Culture, travel-or-hobby"/>
              Culture, travel or hobby</label>
 
          </fieldset>
 
 
        <fieldset class="form-user">
-         <input class="form-user-input" type="text" name="username" placeholder="Full Name" autofocus/>
+         <input class="form-user-input" type="text" name="username" placeholder="Full Name" />
          <input class="form-user-input" type="email" name="email" placeholder="Email"/>
-         <input class="form-user-input" type="tel" name="phone-number" placeholder="Phone number"/>
+         <input class="form-user-input" type="tel" name="phoneNumber" placeholder="Phone number"/>
          </fieldset>
 
 
 
 
-         <button class="btn-form-lesson" type="submit">Trial lesson</button>
+         <button class="btn-form-lesson" type="submit">Book</button>
          </form>
 
       </div>
     </section>
-  `}const i=document.querySelector("#modal-root");function T(){document.body.classList.add("no-scroll")}function B(){document.body.classList.remove("no-scroll")}function C(e){i.innerHTML=q(e),T();const t=i.querySelector(".backdrop"),n=i.querySelector(".closeButton"),a=()=>{i.innerHTML="",B(),document.removeEventListener("keydown",s)},s=o=>{o.key==="Escape"&&a()};t.addEventListener("click",o=>{o.target===t&&a()}),n.addEventListener("click",a),document.addEventListener("keydown",s)}function z(e){return`
+  `}const i=document.querySelector("#modal-root");function B(){document.body.classList.add("no-scroll")}function C(){document.body.classList.remove("no-scroll")}function z(e){i.innerHTML=T(e),B();const t=i.querySelector(".backdrop"),a=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",C(),document.removeEventListener("keydown",s)},s=o=>{o.key==="Escape"&&n()};t.addEventListener("click",o=>{o.target===t&&n()}),a.addEventListener("click",n),document.addEventListener("keydown",s),q(n)}function P(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
@@ -113,7 +113,7 @@ import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
         `).join("")}
     </ul>
   </div>
-    `}function P(e,t){return`
+    `}function A(e,t){return`
 <li class="teacher-card" data-index="${t}">
   <!-- Avatar -->
   <div class="teacher-avatar">
@@ -192,12 +192,12 @@ ${e.conditions}      </p>
       Read more
     </button>
     <!-- ---------------------   teacher-extra   ------------------------------ -->
-${z(e)}
+${P(e)}
     <!-- ---------------------------------------------------------------------- -->
 
     <!-- Levels -->
     <ul class="teacher-levels">
-${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
+${e.levels.map(a=>`<li class='teacher-level'><p>#${a}</p></li>`).join("")}
 
     </ul>
 
@@ -205,5 +205,5 @@ ${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
 
   </div>
 </li>
-    `}const u=document.querySelector(".teachers-list"),L=document.querySelector(".load-more-btn"),_=4;let y=1,d=[];function l(e){d=e,y=1,w()}function w(){const e=y*_,t=d.slice(0,e),n=t.map((a,s)=>P(a,s)).join("");u.innerHTML=n,t.length>=d.length&&(L.style.display="none")}L.addEventListener("click",()=>{y+=1,w()});u.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const n=t.closest(".teacher-card"),a=n.querySelector(".teacher-extra"),s=n.querySelector(".trial-lesson-btn");u.querySelectorAll(".teacher-card").forEach(r=>{r!==n&&(r.querySelector(".teacher-extra")?.classList.add("is-hidden"),r.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),r.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),a.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const c=Number(n.dataset.index),x=d[c],S=r=>{r.stopPropagation(),C(x)};s&&s.addEventListener("click",S)});const p=document.querySelector(".scroll-top"),k=()=>{window.scrollY>350?p.classList.remove("is-hidden"):p.classList.add("is-hidden")};window.addEventListener("scroll",k);k();const A=()=>window.scrollTo({top:0,behavior:"smooth"});p.addEventListener("click",A);const f=document.querySelector(".language");let h=[];function j(e){h=e;const t=e.flatMap(a=>a.languages);[...new Set(t)].forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=a,f.append(s)}),f.value=""}f.addEventListener("change",e=>{const t=e.target.value;if(!t){l(h);return}const n=h.filter(a=>a.languages.includes(t));l(n)});const H=new Date;document.querySelector(".footer-date");const F=document.querySelector(".date-year");F.textContent=H.getFullYear();const O="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function N(){const e=await M.get(O);return e.data?Object.values(e.data):[]}const m=document.querySelector(".level");let v=[];function R(e){v=e;const t=e.flatMap(a=>a.levels);[...new Set(t)].forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=a,m.append(s)}),m.value=""}m.addEventListener("change",e=>{const t=e.target.value;if(!t){l(v);return}const n=v.filter(a=>a.levels.includes(t));l(n)});const g=document.querySelector(".price");let b=[];function V(e){b=e;const t=e.map(a=>a.price_per_hour);[...new Set(t)].sort((a,s)=>a-s).forEach(a=>{const s=document.createElement("option");s.value=a,s.textContent=`${a} $`,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value,n=Number(t);if(!t){l(b);return}const a=b.filter(s=>s.price_per_hour===n);l(a)});E();async function I(){const e=await N();l(e),j(e),R(e),V(e)}I();
-//# sourceMappingURL=main-Eacb03ts.js.map
+    `}const m=document.querySelector(".teachers-list"),w=document.querySelector(".load-more-btn"),_=4;let k=1,d=[];function c(e){d=e,k=1,x()}function x(){const e=k*_,t=d.slice(0,e),a=t.map((n,s)=>A(n,s)).join("");m.innerHTML=a,t.length>=d.length&&(w.style.display="none")}w.addEventListener("click",()=>{k+=1,x()});m.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const a=t.closest(".teacher-card"),n=a.querySelector(".teacher-extra"),s=a.querySelector(".trial-lesson-btn");m.querySelectorAll(".teacher-card").forEach(l=>{l!==a&&(l.querySelector(".teacher-extra")?.classList.add("is-hidden"),l.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),l.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),n.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const r=Number(a.dataset.index),u=d[r],p=l=>{l.stopPropagation(),z(u)};s&&s.addEventListener("click",p)});const f=document.querySelector(".scroll-top"),S=()=>{window.scrollY>350?f.classList.remove("is-hidden"):f.classList.add("is-hidden")};window.addEventListener("scroll",S);S();const F=()=>window.scrollTo({top:0,behavior:"smooth"});f.addEventListener("click",F);const h=document.querySelector(".language");let v=[];function j(e){v=e;const t=e.flatMap(n=>n.languages);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,h.append(s)}),h.value=""}h.addEventListener("change",e=>{const t=e.target.value;if(!t){c(v);return}const a=v.filter(n=>n.languages.includes(t));c(a)});const H=new Date;document.querySelector(".footer-date");const O=document.querySelector(".date-year");O.textContent=H.getFullYear();const N="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function R(){const e=await M.get(N);return e.data?Object.values(e.data):[]}const g=document.querySelector(".level");let b=[];function V(e){b=e;const t=e.flatMap(n=>n.levels);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value;if(!t){c(b);return}const a=b.filter(n=>n.levels.includes(t));c(a)});const y=document.querySelector(".price");let L=[];function D(e){L=e;const t=e.map(n=>n.price_per_hour);[...new Set(t)].sort((n,s)=>n-s).forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=`${n} $`,y.append(s)}),y.value=""}y.addEventListener("change",e=>{const t=e.target.value,a=Number(t);if(!t){c(L);return}const n=L.filter(s=>s.price_per_hour===a);c(n)});$();async function I(){const e=await R();c(e),j(e),V(e),D(e)}I();
+//# sourceMappingURL=main-LLPfWImx.js.map
