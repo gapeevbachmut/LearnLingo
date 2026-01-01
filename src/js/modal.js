@@ -1,3 +1,4 @@
+import { bookingFormSubmit } from './booking-form';
 import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -35,4 +36,6 @@ export function modalWindow(teacher) {
   });
   closeButton.addEventListener('click', close);
   document.addEventListener('keydown', onEsc);
+
+  bookingFormSubmit(close);
 }

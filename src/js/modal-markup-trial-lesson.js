@@ -37,22 +37,22 @@ export function createMarkupTrialLesson(teacher) {
            <input type="radio" name="lesson" value="Exams-and-coursework"/>
              Exams and coursework</label>
          <label class="form-ask-label">
-           <input type="radio" name="lesson" value="travel-or-hobby"/>
+           <input type="radio" name="lesson" value="Culture, travel-or-hobby"/>
              Culture, travel or hobby</label>
 
          </fieldset>
 
 
        <fieldset class="form-user">
-         <input class="form-user-input" type="text" name="username" placeholder="Full Name" autofocus/>
+         <input class="form-user-input" type="text" name="username" placeholder="Full Name" />
          <input class="form-user-input" type="email" name="email" placeholder="Email"/>
-         <input class="form-user-input" type="tel" name="phone-number" placeholder="Phone number"/>
+         <input class="form-user-input" type="tel" name="phoneNumber" placeholder="Phone number"/>
          </fieldset>
 
 
 
 
-         <button class="btn-form-lesson" type="submit">Trial lesson</button>
+         <button class="btn-form-lesson" type="submit">Book</button>
          </form>
 
       </div>
