@@ -1,4 +1,4 @@
-import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const o of s)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function a(s){const o={};return s.integrity&&(o.integrity=s.integrity),s.referrerPolicy&&(o.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?o.credentials="include":s.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function n(s){if(s.ep)return;s.ep=!0;const o=a(s);fetch(s.href,o)}})();const E=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{c as B,a as m,b as T}from"./vendor-BamL-8Vd.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&a(r)}).observe(document,{childList:!0,subtree:!0});function n(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function a(t){if(t.ep)return;t.ep=!0;const o=n(t);fetch(t.href,o)}})();const C=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -34,7 +34,26 @@ import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
 </symbol>
   </defs>
 </svg>
-`;function $(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=E,document.body.prepend(e)}function q(e){const t=document.querySelector(".form-lesson");t&&t.addEventListener("submit",a=>{a.preventDefault();const n=new FormData(t),s=Object.fromEntries(n.entries());console.log("FORM DATA:",s);const o=a.target,r=o.elements.lesson.value,u=o.elements.username.value,p=o.elements.email.value,l=o.elements.phoneNumber.value;console.log(r),console.log(u),console.log(p),console.log(l),e()},{once:!0})}function T(e){return`
+`;function z(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=C,document.body.prepend(e)}const P=B({username:m().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:m().required("Email is required").email("Invalid email"),phoneNumber:m().required("Phone is required").matches(/^\+?\d{10,14}$/,"Invalid phone number. +3801111111")});function A(e){const s={};e.inner.forEach(n=>{s[n.path]=n.message}),Object.entries(s).forEach(([n,a])=>{const t=document.querySelector(`[name="${n}"]`);if(!t)return;let o=t.nextElementSibling;(!o||!o.classList.contains("error"))&&(o=document.createElement("p"),o.classList.add("error"),t.after(o)),o.textContent=a})}function _(e){const s=document.querySelector(".form-lesson");s&&s.addEventListener("submit",async n=>{n.preventDefault(),s.querySelectorAll(".error").forEach(o=>o.remove());const a=new FormData(s),t=Object.fromEntries(a.entries());try{await P.validate(t,{abortEarly:!1}),console.log("FORM DATA:",t),e()}catch(o){A(o)}})}function j(){return`
+    <section class="backdrop">
+     <div class="modal">
+      <button  class="closeButton" type="button">&times;</button>
+
+         <h2>Log In</h2>
+         <p>Welcome back! Please enter your credentials to access your account and continue your search for an teacher.</p>
+
+
+</div>
+    </section>
+    `}function F(){return`
+    <section class="backdrop">
+     <div class="modal">
+      <button  class="closeButton" type="button">&times;</button>
+
+         <h2>register</h2>
+</div>
+    </section>
+    `}function O(e){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -92,29 +111,29 @@ import{a as M}from"./vendor-BWC8OeqA.js";(function(){const t=document.createElem
 
       </div>
     </section>
-  `}const i=document.querySelector("#modal-root");function B(){document.body.classList.add("no-scroll")}function C(){document.body.classList.remove("no-scroll")}function z(e){i.innerHTML=T(e),B();const t=i.querySelector(".backdrop"),a=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",C(),document.removeEventListener("keydown",s)},s=o=>{o.key==="Escape"&&n()};t.addEventListener("click",o=>{o.target===t&&n()}),a.addEventListener("click",n),document.addEventListener("keydown",s),q(n)}function P(e){return`
+  `}const u=document.querySelector("#modal-root");function H(){document.body.classList.add("no-scroll")}function N(){document.body.classList.remove("no-scroll")}function w(e){const{type:s,teacher:n}=e;let a="";switch(s){case"trial":a=O(n);break;case"login":a=j();break;case"register":a=F();break;default:return}u.innerHTML=a,H();const t=u.querySelector(".backdrop"),o=u.querySelector(".closeButton"),r=()=>{u.innerHTML="",N(),document.removeEventListener("keydown",d)},d=i=>{i.key==="Escape"&&r()};t.addEventListener("click",i=>{i.target===t&&r()}),o.addEventListener("click",r),document.addEventListener("keydown",d),s==="trial"&&_(r)}const S=document.querySelector(".logIn"),x=document.querySelector(".register");S&&S.addEventListener("click",e=>{e.preventDefault(),w({type:"login"})});x&&x.addEventListener("click",e=>{e.preventDefault(),w({type:"register"})});function I(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
 
     <h3 class="is-hidden">Reviews</h3>
     <ul class="teacher-reviews">
-      ${e.reviews.map(t=>`
+      ${e.reviews.map(s=>`
           <li class="review-item">
-            <p class="review-title"><span class="review-name">${t.reviewer_name}</span>
+            <p class="review-title"><span class="review-name">${s.reviewer_name}</span>
             <span> <svg width="16" height="16" class="svg-star">
             <use href="#icon-star"></use>
           </svg></span>
-              <span>${t.reviewer_rating.toFixed(1)}</span>
+              <span>${s.reviewer_rating.toFixed(1)}</span>
 
             </p>
-            <p class="review-comment">${t.comment}</p>
+            <p class="review-comment">${s.comment}</p>
           </li>
         `).join("")}
     </ul>
   </div>
-    `}function A(e,t){return`
-<li class="teacher-card" data-index="${t}">
+    `}function R(e,s){return`
+<li class="teacher-card" data-index="${s}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
@@ -192,12 +211,12 @@ ${e.conditions}      </p>
       Read more
     </button>
     <!-- ---------------------   teacher-extra   ------------------------------ -->
-${P(e)}
+${I(e)}
     <!-- ---------------------------------------------------------------------- -->
 
     <!-- Levels -->
     <ul class="teacher-levels">
-${e.levels.map(a=>`<li class='teacher-level'><p>#${a}</p></li>`).join("")}
+${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
 
     </ul>
 
@@ -205,5 +224,5 @@ ${e.levels.map(a=>`<li class='teacher-level'><p>#${a}</p></li>`).join("")}
 
   </div>
 </li>
-    `}const m=document.querySelector(".teachers-list"),w=document.querySelector(".load-more-btn"),_=4;let k=1,d=[];function c(e){d=e,k=1,x()}function x(){const e=k*_,t=d.slice(0,e),a=t.map((n,s)=>A(n,s)).join("");m.innerHTML=a,t.length>=d.length&&(w.style.display="none")}w.addEventListener("click",()=>{k+=1,x()});m.addEventListener("click",e=>{const t=e.target.closest(".teacher-read-more");if(!t)return;const a=t.closest(".teacher-card"),n=a.querySelector(".teacher-extra"),s=a.querySelector(".trial-lesson-btn");m.querySelectorAll(".teacher-card").forEach(l=>{l!==a&&(l.querySelector(".teacher-extra")?.classList.add("is-hidden"),l.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),l.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),n.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),s.classList.add("is-hidden")):(t.classList.add("is-hidden"),s.classList.remove("is-hidden"));const r=Number(a.dataset.index),u=d[r],p=l=>{l.stopPropagation(),z(u)};s&&s.addEventListener("click",p)});const f=document.querySelector(".scroll-top"),S=()=>{window.scrollY>350?f.classList.remove("is-hidden"):f.classList.add("is-hidden")};window.addEventListener("scroll",S);S();const F=()=>window.scrollTo({top:0,behavior:"smooth"});f.addEventListener("click",F);const h=document.querySelector(".language");let v=[];function j(e){v=e;const t=e.flatMap(n=>n.languages);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,h.append(s)}),h.value=""}h.addEventListener("change",e=>{const t=e.target.value;if(!t){c(v);return}const a=v.filter(n=>n.languages.includes(t));c(a)});const H=new Date;document.querySelector(".footer-date");const O=document.querySelector(".date-year");O.textContent=H.getFullYear();const N="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function R(){const e=await M.get(N);return e.data?Object.values(e.data):[]}const g=document.querySelector(".level");let b=[];function V(e){b=e;const t=e.flatMap(n=>n.levels);[...new Set(t)].forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=n,g.append(s)}),g.value=""}g.addEventListener("change",e=>{const t=e.target.value;if(!t){c(b);return}const a=b.filter(n=>n.levels.includes(t));c(a)});const y=document.querySelector(".price");let L=[];function D(e){L=e;const t=e.map(n=>n.price_per_hour);[...new Set(t)].sort((n,s)=>n-s).forEach(n=>{const s=document.createElement("option");s.value=n,s.textContent=`${n} $`,y.append(s)}),y.value=""}y.addEventListener("change",e=>{const t=e.target.value,a=Number(t);if(!t){c(L);return}const n=L.filter(s=>s.price_per_hour===a);c(n)});$();async function I(){const e=await R();c(e),j(e),V(e),D(e)}I();
-//# sourceMappingURL=main-LLPfWImx.js.map
+    `}const f=document.querySelector(".teachers-list"),M=document.querySelector(".load-more-btn"),D=4;let E=1,p=[];function l(e){p=e,E=1,q()}function q(){const e=E*D,s=p.slice(0,e),n=s.map((a,t)=>R(a,t)).join("");f.innerHTML=n,s.length>=p.length&&(M.style.display="none")}M.addEventListener("click",()=>{E+=1,q()});f.addEventListener("click",e=>{const s=e.target.closest(".teacher-read-more");if(!s)return;const n=s.closest(".teacher-card"),a=n.querySelector(".teacher-extra"),t=n.querySelector(".trial-lesson-btn");f.querySelectorAll(".teacher-card").forEach(c=>{c!==n&&(c.querySelector(".teacher-extra")?.classList.add("is-hidden"),c.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),c.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))}),a.classList.toggle("is-hidden")?(s.classList.remove("is-hidden"),t.classList.add("is-hidden")):(s.classList.add("is-hidden"),t.classList.remove("is-hidden"));const r=Number(n.dataset.index),d=p[r],i=c=>{c.stopPropagation(),w({type:"trial",teacher:d})};t&&t.addEventListener("click",i)});const h=document.querySelector(".scroll-top"),$=()=>{window.scrollY>350?h.classList.remove("is-hidden"):h.classList.add("is-hidden")};window.addEventListener("scroll",$);$();const V=()=>window.scrollTo({top:0,behavior:"smooth"});h.addEventListener("click",V);const v=document.querySelector(".language");let g=[];function Y(e){g=e;const s=e.flatMap(a=>a.languages);[...new Set(s)].forEach(a=>{const t=document.createElement("option");t.value=a,t.textContent=a,v.append(t)}),v.value=""}v.addEventListener("change",e=>{const s=e.target.value;if(!s){l(g);return}const n=g.filter(a=>a.languages.includes(s));l(n)});const W=new Date;document.querySelector(".footer-date");const K=document.querySelector(".date-year");K.textContent=W.getFullYear();const U="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function G(){const e=await T.get(U);return e.data?Object.values(e.data):[]}const b=document.querySelector(".level");let y=[];function J(e){y=e;const s=e.flatMap(a=>a.levels);[...new Set(s)].forEach(a=>{const t=document.createElement("option");t.value=a,t.textContent=a,b.append(t)}),b.value=""}b.addEventListener("change",e=>{const s=e.target.value;if(!s){l(y);return}const n=y.filter(a=>a.levels.includes(s));l(n)});const k=document.querySelector(".price");let L=[];function Q(e){L=e;const s=e.map(a=>a.price_per_hour);[...new Set(s)].sort((a,t)=>a-t).forEach(a=>{const t=document.createElement("option");t.value=a,t.textContent=`${a} $`,k.append(t)}),k.value=""}k.addEventListener("change",e=>{const s=e.target.value,n=Number(s);if(!s){l(L);return}const a=L.filter(t=>t.price_per_hour===n);l(a)});z();async function X(){const e=await G();l(e),Y(e),J(e),Q(e)}X();
+//# sourceMappingURL=main-D98j1n0G.js.map
