@@ -1,9 +1,6 @@
 import { modalWindow } from './modal.js';
 import { createTeacherCard } from './teacher-card.js';
 
-// import { fetchTeachers } from './teachers-api.js';
-// import { init } from '../main.js';
-
 //  це - ul - сюди вставляється  - li (createTeacherCard)
 const teacherList = document.querySelector('.teachers-list'); // ul
 const loadMoreBtn = document.querySelector('.load-more-btn'); //кнопка - load-more
@@ -82,7 +79,7 @@ teacherList.addEventListener('click', event => {
 
   const openModal = event => {
     event.stopPropagation();
-    modalWindow(teacher);
+    modalWindow({ type: 'trial', teacher });
   };
   if (!trialLessonBtn) return;
   trialLessonBtn.addEventListener('click', openModal);

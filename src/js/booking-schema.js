@@ -10,5 +10,5 @@ export const bookingSchema = yup.object({
   phoneNumber: yup
     .string()
     .required('Phone is required')
-    .matches(/^\+?\d{10,14}$/, 'Invalid phone number'),
+    .matches(/^\+?\d{10,14}$/, 'Invalid phone number. +3801111111'),
 });

@@ -1,4 +1,7 @@
 import { bookingFormSubmit } from './booking-form';
+
+import { createMarkupLogin } from './modal-markup-login';
+import { createMarkupRegister } from './modal-markup-register';
 import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -11,8 +14,29 @@ function unlockBodyScroll() {
   document.body.classList.remove('no-scroll');
 }
 
-export function modalWindow(teacher) {
-  modalRoot.innerHTML = createMarkupTrialLesson(teacher);
+export function modalWindow(config) {
+  const { type, teacher } = config;
+
+  let marcup = '';
+
+  switch (type) {
+    case 'trial':
+      marcup = createMarkupTrialLesson(teacher);
+      break;
+
+    case 'login':
+      marcup = createMarkupLogin();
+      break;
+
+    case 'register':
+      marcup = createMarkupRegister();
+      break;
+
+    default:
+      return;
+  }
+
+  modalRoot.innerHTML = marcup;
   lockBodyScroll();
 
   const backdrop = modalRoot.querySelector('.backdrop');
@@ -37,5 +61,9 @@ export function modalWindow(teacher) {
   closeButton.addEventListener('click', close);
   document.addEventListener('keydown', onEsc);
 
-  bookingFormSubmit(close);
+  // bookingFormSubmit(close);
+
+  if (type === 'trial') bookingFormSubmit(close);
+  // if (type === 'login') loginFormSubmit(close);
+  // if (type === 'register') registerFormSubmit(close);
 }
