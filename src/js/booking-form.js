@@ -1,30 +1,32 @@
+import { bookingSchema } from './booking-schema';
+import { showErrors } from './booking-show-error';
+
 export function bookingFormSubmit(onSuccess) {
   const bookingForm = document.querySelector('.form-lesson');
   if (!bookingForm) return;
 
-  bookingForm.addEventListener(
-    'submit',
-    event => {
-      event.preventDefault();
+  bookingForm.addEventListener('submit', async event => {
+    event.preventDefault();
 
-      const formData = new FormData(bookingForm);
-      const data = Object.fromEntries(formData.entries());
+    bookingForm.querySelectorAll('.error').forEach(el => el.remove());
+    // видаляю старі помилки до перевірки
 
+    const formData = new FormData(bookingForm);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      await bookingSchema.validate(data, { abortEarly: false });
       console.log('FORM DATA:', data);
-      const formValue = event.target;
-      const lesson = formValue.elements.lesson.value;
 
-      const username = formValue.elements.username.value;
-      const email = formValue.elements.email.value;
-      const phone = formValue.elements.phoneNumber.value;
-
-      console.log(lesson);
-      console.log(username);
-      console.log(email);
-      console.log(phone);
+      // const { lesson, username, email, phoneNumber } = data;
+      // console.log(data.lesson);
+      // console.log(data.username);
+      // console.log(data.email);
+      // console.log(data.phoneNumber);
 
       onSuccess(); // закриваємо модалку
-    },
-    { once: true }
-  );
+    } catch (error) {
+      showErrors(error);
+    }
+  });
 }
