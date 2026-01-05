@@ -1,3 +1,4 @@
+import { registerUser } from './auth-register';
 import { showErrors } from './booking-show-error';
 import { registerSchema } from './form-validation-schema';
 
@@ -19,7 +20,8 @@ export function registerFormSubmit(onSuccess) {
       await registerSchema.validate(data, { abortEarly: false });
       console.log('REGISTER-FORM DATA:', data);
 
-      // тут буде firebase auth
+      // тут firebase auth
+      await registerUser(data.username, data.email, data.password);
 
       onSuccess(); // закриваємо модалку
     } catch (error) {

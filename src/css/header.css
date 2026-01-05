@@ -106,7 +106,8 @@
     gap: 16px;
   }
 
-  .logIn {
+  .logIn,
+  .logout {
     gap: 8px;
     font-weight: 700;
     font-size: 16px;

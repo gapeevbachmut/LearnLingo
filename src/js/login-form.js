@@ -1,3 +1,4 @@
+import { loginUser } from './auth-login';
 import { showErrors } from './booking-show-error';
 import { loginSchema } from './form-validation-schema';
 
@@ -19,7 +20,8 @@ export function loginFormSubmit(onSuccess) {
       await loginSchema.validate(data, { abortEarly: false });
       console.log('LOGIN-FORM DATA:', data);
 
-      // тут буде firebase auth
+      // тут firebase auth
+      await loginUser(data.email, data.password);
 
       onSuccess(); // закриваємо модалку
     } catch (error) {

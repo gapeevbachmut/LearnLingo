@@ -63,8 +63,6 @@ export function modalWindow(config) {
   closeButton.addEventListener('click', close);
   document.addEventListener('keydown', onEsc);
 
-  // bookingFormSubmit(close);
-
   if (type === 'trial') bookingFormSubmit(close);
   if (type === 'login') loginFormSubmit(close);
   if (type === 'register') registerFormSubmit(close);

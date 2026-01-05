@@ -1,5 +1,7 @@
 import * as yup from 'yup';
 
+// ----------------  BOOKING
+
 export const bookingSchema = yup.object({
   username: yup
     .string()
@@ -23,6 +25,8 @@ export const loginSchema = yup.object({
     .required('Password is required')
     .min(8, 'Minimum 8 characters'),
 });
+
+// ----------------  REGISTER
 
 export const registerSchema = yup.object({
   username: yup

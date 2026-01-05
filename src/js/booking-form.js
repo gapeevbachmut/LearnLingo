@@ -19,13 +19,7 @@ export function bookingFormSubmit(onSuccess) {
       await bookingSchema.validate(data, { abortEarly: false });
       console.log('BOOKING-FORM DATA:', data);
 
-      // тут буде firebase auth
-
-      // const { lesson, username, email, phoneNumber } = data;
-      // console.log(data.lesson);
-      // console.log(data.username);
-      // console.log(data.email);
-      // console.log(data.phoneNumber);
+      // тут буде firebase auth - ???
 
       onSuccess(); // закриваємо модалку
     } catch (error) {
