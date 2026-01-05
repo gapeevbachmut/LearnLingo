@@ -1,4 +1,4 @@
-import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const o of e)if(o.type==="childList")for(const n of o.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const o={};return e.integrity&&(o.integrity=e.integrity),e.referrerPolicy&&(o.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?o.credentials="include":e.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function r(e){if(e.ep)return;e.ep=!0;const o=a(e);fetch(e.href,o)}})();const b=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{c as d,b as l}from"./vendor-BTtevb37.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))s(o);new MutationObserver(o=>{for(const e of o)if(e.type==="childList")for(const n of e.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&s(n)}).observe(document,{childList:!0,subtree:!0});function a(o){const e={};return o.integrity&&(e.integrity=o.integrity),o.referrerPolicy&&(e.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?e.credentials="include":o.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function s(o){if(o.ep)return;o.ep=!0;const e=a(o);fetch(o.href,e)}})();const y=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -34,7 +34,7 @@ import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.cre
 </symbol>
   </defs>
 </svg>
-`;function z(){const t=document.createElement("svg");t.style.display="none",t.innerHTML=b,document.body.prepend(t)}const y=p({username:l().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:l().required("Email is required").email("Invalid email"),phoneNumber:l().required("Phone is required").matches(/^\+?\d{10,14}$/,"Invalid phone number. +3801111111"),password:l().required().min(8,"Minimum 8 characters").max(30,"Max 30 characters")});function h(t){const s={};t.inner.forEach(a=>{s[a.path]=a.message}),Object.entries(s).forEach(([a,r])=>{const e=document.querySelector(`[name="${a}"]`);if(!e)return;let o=e.nextElementSibling;(!o||!o.classList.contains("error"))&&(o=document.createElement("p"),o.classList.add("error"),e.after(o)),o.textContent=r})}function v(t){const s=document.querySelector(".form-lesson");s&&s.addEventListener("submit",async a=>{a.preventDefault(),s.querySelectorAll(".error").forEach(o=>o.remove());const r=new FormData(s),e=Object.fromEntries(r.entries());try{await y.validate(e,{abortEarly:!1}),console.log("FORM DATA:",e),t()}catch(o){h(o)}})}function g(){return`
+`;function A(){const r=document.createElement("svg");r.style.display="none",r.innerHTML=y,document.body.prepend(r)}const h=d({username:l().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:l().required("Email is required").email("Invalid email"),phoneNumber:l().required("Phone is required").matches(/^\+?\d{10,14}$/,"Invalid phone number. +3801111111")}),v=d({email:l().required("Email is required").email("Invalid email"),password:l().required("Password is required").min(8,"Minimum 8 characters")}),g=d({username:l().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:l().required("Email is required").email("Invalid email"),password:l().required("Password is required").min(8,"Minimum 8 characters")});function u(r){const t={};r.inner.forEach(a=>{t[a.path]=a.message}),Object.entries(t).forEach(([a,s])=>{const o=document.querySelector(`[name="${a}"]`);if(!o)return;let e=o.nextElementSibling;(!e||!e.classList.contains("error"))&&(e=document.createElement("p"),e.classList.add("error"),o.after(e)),e.textContent=s})}function w(r){const t=document.querySelector(".form-lesson");t&&t.addEventListener("submit",async a=>{a.preventDefault(),t.querySelectorAll(".error").forEach(e=>e.remove());const s=new FormData(t),o=Object.fromEntries(s.entries());try{await h.validate(o,{abortEarly:!1}),console.log("BOOKING-FORM DATA:",o),r()}catch(e){u(e)}})}function k(r){const t=document.querySelector(".form-login");t&&t.addEventListener("submit",async a=>{a.preventDefault(),t.querySelectorAll(".error").forEach(e=>e.remove());const s=new FormData(t),o=Object.fromEntries(s.entries());try{await v.validate(o,{abortEarly:!1}),console.log("LOGIN-FORM DATA:",o),r()}catch(e){u(e)}})}function E(){return`
     <section class="backdrop">
      <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -61,7 +61,7 @@ import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.cre
 
 </div>
     </section>
-    `}function k(){return`
+    `}function M(){return`
     <section class="backdrop">
      <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -86,7 +86,7 @@ import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.cre
 
 </div>
     </section>
-    `}function w(t){return`
+    `}function S(r){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -97,13 +97,13 @@ import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.cre
 
          <div class="box-teacher">
          <div class="img-teacher-box">
-   <img src='${t.avatar_url||"../img/main-content/default-avatar.png"} '
-     alt="${t.name||"Teacher"} " class="form-avatar" width="44"
+   <img src='${r.avatar_url||"../img/main-content/default-avatar.png"} '
+     alt="${r.name||"Teacher"} " class="form-avatar" width="44"
       height="44" />
              </div>
              <div class="teacher-info">
             <p class="teacher-info-title">Your teacher</p>
-         <h2 class="teacher-info-name">${t.name} ${t.surname}</h2>
+         <h2 class="teacher-info-name">${r.name} ${r.surname}</h2>
              </div>
 
          </div>
@@ -144,5 +144,5 @@ import{c as p,b as l}from"./vendor-BTtevb37.js";(function(){const s=document.cre
 
       </div>
     </section>
-  `}const i=document.querySelector("#modal-root");function x(){document.body.classList.add("no-scroll")}function M(){document.body.classList.remove("no-scroll")}function f(t){const{type:s,teacher:a}=t;let r="";switch(s){case"trial":r=w(a);break;case"login":r=g();break;case"register":r=k();break;default:return}i.innerHTML=r,x();const e=i.querySelector(".backdrop"),o=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",M(),document.removeEventListener("keydown",d)},d=c=>{c.key==="Escape"&&n()};e.addEventListener("click",c=>{c.target===e&&n()}),o.addEventListener("click",n),document.addEventListener("keydown",d),s==="trial"&&v(n)}const u=document.querySelector(".logIn"),m=document.querySelector(".register");u&&u.addEventListener("click",t=>{t.preventDefault(),f({type:"login"})});m&&m.addEventListener("click",t=>{t.preventDefault(),f({type:"register"})});const L=new Date;document.querySelector(".footer-date");const E=document.querySelector(".date-year");E.textContent=L.getFullYear();export{z as i,f as m};
-//# sourceMappingURL=footer-1fQkoomF.js.map
+  `}function x(r){const t=document.querySelector(".form-register");t&&t.addEventListener("submit",async a=>{a.preventDefault(),t.querySelectorAll(".error").forEach(e=>e.remove());const s=new FormData(t),o=Object.fromEntries(s.entries());try{await g.validate(o,{abortEarly:!1}),console.log("REGISTER-FORM DATA:",o),r()}catch(e){u(e)}})}const i=document.querySelector("#modal-root");function L(){document.body.classList.add("no-scroll")}function q(){document.body.classList.remove("no-scroll")}function b(r){const{type:t,teacher:a}=r;let s="";switch(t){case"trial":s=S(a);break;case"login":s=E();break;case"register":s=M();break;default:return}i.innerHTML=s,L();const o=i.querySelector(".backdrop"),e=i.querySelector(".closeButton"),n=()=>{i.innerHTML="",q(),document.removeEventListener("keydown",m)},m=c=>{c.key==="Escape"&&n()};o.addEventListener("click",c=>{c.target===o&&n()}),e.addEventListener("click",n),document.addEventListener("keydown",m),t==="trial"&&w(n),t==="login"&&k(n),t==="register"&&x(n)}const f=document.querySelector(".logIn"),p=document.querySelector(".register");f&&f.addEventListener("click",r=>{r.preventDefault(),b({type:"login"})});p&&p.addEventListener("click",r=>{r.preventDefault(),b({type:"register"})});const z=new Date;document.querySelector(".footer-date");const B=document.querySelector(".date-year");B.textContent=z.getFullYear();export{A as i,b as m};
+//# sourceMappingURL=footer-lpvTSTK6.js.map
