@@ -1,8 +1,10 @@
 import { bookingFormSubmit } from './booking-form';
+import { loginFormSubmit } from './login-form';
 
 import { createMarkupLogin } from './modal-markup-login';
 import { createMarkupRegister } from './modal-markup-register';
 import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
+import { registerFormSubmit } from './register-form';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -64,6 +66,6 @@ export function modalWindow(config) {
   // bookingFormSubmit(close);
 
   if (type === 'trial') bookingFormSubmit(close);
-  // if (type === 'login') loginFormSubmit(close);
-  // if (type === 'register') registerFormSubmit(close);
+  if (type === 'login') loginFormSubmit(close);
+  if (type === 'register') registerFormSubmit(close);
 }

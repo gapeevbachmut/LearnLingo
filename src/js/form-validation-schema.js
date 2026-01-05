@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 
-export const formValidationSchema = yup.object({
+export const bookingSchema = yup.object({
   username: yup
     .string()
     .required('Name is required')
@@ -11,9 +11,28 @@ export const formValidationSchema = yup.object({
     .string()
     .required('Phone is required')
     .matches(/^\+?\d{10,14}$/, 'Invalid phone number. +3801111111'),
+});
+
+// ----------------  LOGIN
+
+export const loginSchema = yup.object({
+  email: yup.string().required('Email is required').email('Invalid email'),
+
   password: yup
     .string()
-    .required()
-    .min(8, 'Minimum 8 characters')
+    .required('Password is required')
+    .min(8, 'Minimum 8 characters'),
+});
+
+export const registerSchema = yup.object({
+  username: yup
+    .string()
+    .required('Name is required')
+    .min(3, 'Minimum 3 characters')
     .max(30, 'Max 30 characters'),
+  email: yup.string().required('Email is required').email('Invalid email'),
+  password: yup
+    .string()
+    .required('Password is required')
+    .min(8, 'Minimum 8 characters'),
 });
