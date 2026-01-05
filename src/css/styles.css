@@ -16,6 +16,6 @@
 @import url('./filters.css');
 @import url('./teachers-list.css');
 @import url('./teacher-extra.css');
-/* @import url('./back-link.css'); */
+@import url('./auth.css');
 @import url('./modal.css');
 @import url('./footer.css');

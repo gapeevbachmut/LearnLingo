@@ -13,7 +13,7 @@
 
 .modal {
   position: relative;
-  width: 90vh;
+  width: 320px;
   max-width: 90vw;
   max-height: 90vh;
   border-radius: 8px;
@@ -197,6 +197,14 @@ form:focus-within {
   color: #121417;
 }
 
+.error {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 138%;
+  color: rgba(18, 20, 23, 0.7);
+}
+
 @media screen and (min-width: 768px) {
   .modal {
     border-radius: 30px;
@@ -225,5 +233,13 @@ form:focus-within {
 
   .btn-form-lesson {
     height: 60px;
+  }
+
+  .form-user-input {
+    padding: 18px;
+  }
+
+  .error {
+    font-size: 14px;
   }
 }

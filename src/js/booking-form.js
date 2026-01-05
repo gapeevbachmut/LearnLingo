@@ -1,4 +1,4 @@
-import { bookingSchema } from './booking-schema';
+import { formValidationSchema } from './form-validation-schema';
 import { showErrors } from './booking-show-error';
 
 export function bookingFormSubmit(onSuccess) {
@@ -15,7 +15,7 @@ export function bookingFormSubmit(onSuccess) {
     const data = Object.fromEntries(formData.entries());
 
     try {
-      await bookingSchema.validate(data, { abortEarly: false });
+      await formValidationSchema.validate(data, { abortEarly: false });
       console.log('FORM DATA:', data);
 
       // const { lesson, username, email, phoneNumber } = data;
