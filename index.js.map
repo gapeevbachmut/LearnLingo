@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"file":"index.js","sources":["../src/main.js"],"sourcesContent":["import { injectSvgSprite } from './js/inject-sprite.js';\n\ninjectSvgSprite(); // вставка SVG-спрайта в <body>\n\nimport './js/header.js';\nimport './js/footer.js';\n"],"names":["injectSvgSprite"],"mappings":"+EAEAA"}
