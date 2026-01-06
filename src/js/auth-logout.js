@@ -5,9 +5,19 @@ export async function logoutUser() {
   await signOut(auth);
 }
 
-export function logoutUserMarkup() {
+// const logout = document.querySelector('.logout-btn');
+// logout.addEventListener('click', async event => {
+//   if (event.target.classList.contains('logout-btn')) {
+//     await signOut(auth);
+//   }
+// });
+
+export function logoutUserMarkup(user) {
+  const name = user.displayName || user.email;
+
   return `
     <div>
-  <button type="button" class="logout"> LOG-OUT</button>
+       <p>Hello, ${name} </p>
+  <button type="button" class="logout-btn"> LOG-OUT</button>
     </div>`;
 }
