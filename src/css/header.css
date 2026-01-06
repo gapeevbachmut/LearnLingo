@@ -50,13 +50,15 @@
   align-items: center;
 }
 
-.auth-list {
+.auth-list,
+.out-box {
   display: flex;
   gap: 8px;
   align-items: center;
 }
 
-.logIn {
+.logIn,
+.logout {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -69,7 +71,8 @@
   background-color: inherit;
 }
 
-.register {
+.register,
+.out-text {
   border-radius: 8px;
   padding: 16px 24px;
   background-color: #121417;
@@ -102,7 +105,8 @@
     font-size: 16px;
   }
 
-  .auth-list {
+  .auth-list,
+  .out-box {
     gap: 16px;
   }
 
@@ -113,9 +117,10 @@
     font-size: 16px;
   }
 
-  .register {
+  .register,
+  .out-text {
     border-radius: 12px;
-    padding: 18px 39px;
+    padding: 14px 39px;
     font-weight: 700;
     font-size: 16px;
     height: 48px;

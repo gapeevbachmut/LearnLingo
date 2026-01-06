@@ -5,19 +5,17 @@ export async function logoutUser() {
   await signOut(auth);
 }
 
-// const logout = document.querySelector('.logout-btn');
-// logout.addEventListener('click', async event => {
-//   if (event.target.classList.contains('logout-btn')) {
-//     await signOut(auth);
-//   }
-// });
-
 export function logoutUserMarkup(user) {
   const name = user.displayName || user.email;
 
   return `
-    <div>
-       <p>Hello, ${name} </p>
-  <button type="button" class="logout-btn"> LOG-OUT</button>
+    <div class="out-box">
+
+  <button type="button" class="logout">
+    <svg width="20" height="20">
+      <use href="#icon-log-out"></use>
+    </svg>Log out  </button>
+
+  <p class="out-text">Hello, ${name} </p>
     </div>`;
 }
