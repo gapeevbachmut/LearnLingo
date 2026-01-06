@@ -4,6 +4,7 @@ import { loginFormSubmit } from './login-form';
 import { createMarkupLogin } from './modal-markup-login';
 import { createMarkupRegister } from './modal-markup-register';
 import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
+// import { initPasswordToggle } from './password-toggle';
 import { registerFormSubmit } from './register-form';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -39,6 +40,9 @@ export function modalWindow(config) {
   }
 
   modalRoot.innerHTML = marcup;
+
+  // initPasswordToggle(); // для поля пароля - око
+
   lockBodyScroll();
 
   const backdrop = modalRoot.querySelector('.backdrop');

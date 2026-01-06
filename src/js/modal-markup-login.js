@@ -12,9 +12,18 @@ export function createMarkupLogin() {
 <input class="form-user-input" type='email' name="email" placeholder="Email"/>
 
 <div class="password-box">
-<input class="form-user-input" type='password' name='password' placeholder='Password'/>
-<button type="button" class="password">
-<svg width="20" height="20" class="icon-eye-off">
+<input
+   class="form-user-input"
+   type='password'
+   name='password'
+   placeholder='Password'/>
+
+<button
+   type="button"
+   class="password-toggle"
+   aria-label="Show password">
+
+     <svg width="20" height="20" class="icon-eye">
       <use href="#icon-eye-off"></use>
     </svg></button>
 </div>

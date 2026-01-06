@@ -1,6 +1,5 @@
 import { injectSvgSprite } from './js/inject-sprite.js';
-
-injectSvgSprite(); // вставка SVG-спрайта в <body>
+import { initPasswordToggle } from './js/password-toggle.js';
 
 import './js/header.js';
 import './js/footer.js';
@@ -14,6 +13,8 @@ import { createLanguageFilter } from './js/filter-language.js';
 import { createLevelFilter } from './js/filter-level.js';
 import { createPriceFilter } from './js/filter-price.js';
 
+injectSvgSprite(); // вставка SVG-спрайта в <body>
+
 export async function initTeachers() {
   const teachers = await fetchTeachers();
 
@@ -25,3 +26,5 @@ export async function initTeachers() {
 }
 
 initTeachers();
+
+initPasswordToggle(); // для поля пароля - око
