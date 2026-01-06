@@ -1,20 +1,14 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 import { getAuth } from 'firebase/auth';
-import 'dotenv/config';
 
-// Your web app's Firebase configuration
-//
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUSKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
+  apiKey: 'AIzaSyBM5Y6QM2r6WXTF8zM7dWPy11UsmUn6HlI',
+  authDomain: 'learnlingo-auth-320f9.firebaseapp.com',
+  projectId: 'learnlingo-auth-320f9',
+  storageBucket: 'learnlingo-auth-320f9.firebasestorage.app',
+  messagingSenderId: '1060134815936',
+  appId: '1:1060134815936:web:65e14830a23616ff3e0525',
 };
 
 // Initialize Firebase
