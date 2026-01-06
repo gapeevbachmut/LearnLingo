@@ -1,2 +1,2 @@
-import{i}from"./assets/footer-Caa3Bft0.js";import"./assets/vendor-D2CNYbfS.js";i();
+import{i}from"./assets/footer-D93N8gZN.js";import"./assets/vendor-DEkrjftq.js";i();
 //# sourceMappingURL=index.js.map
