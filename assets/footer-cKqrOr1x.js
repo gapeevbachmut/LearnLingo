@@ -1,8 +1,13 @@
-import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./vendor-Ujg-56V2.js";(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const a of t)if(a.type==="childList")for(const n of a.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&r(n)}).observe(document,{childList:!0,subtree:!0});function s(t){const a={};return t.integrity&&(a.integrity=t.integrity),t.referrerPolicy&&(a.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?a.credentials="include":t.crossOrigin==="anonymous"?a.credentials="omit":a.credentials="same-origin",a}function r(t){if(t.ep)return;t.ep=!0;const a=s(t);fetch(t.href,a)}})();const L=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{i as b,g as y,c as d,b as i,s as g,d as v,u as w,e as k,o as M}from"./vendor-CJFyyV97.js";(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function r(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(t){if(t.ep)return;t.ep=!0;const s=r(t);fetch(t.href,s)}})();const E=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
     </symbol>
+<!--  -->
+<symbol id="icon-log-out" viewBox="0 0 24 24">
+<path fill="#f4c550"  stroke="#f4c550" d="M9 20h-4c-0.276 0-0.525-0.111-0.707-0.293s-0.293-0.431-0.293-0.707v-14c0-0.276 0.111-0.525 0.293-0.707s0.431-0.293 0.707-0.293h4c0.552 0 1-0.448 1-1s-0.448-1-1-1h-4c-0.828 0-1.58 0.337-2.121 0.879s-0.879 1.293-0.879 2.121v14c0 0.828 0.337 1.58 0.879 2.121s1.293 0.879 2.121 0.879h4c0.552 0 1-0.448 1-1s-0.448-1-1-1zM18.586 11h-9.586c-0.552 0-1 0.448-1 1s0.448 1 1 1h9.586l-3.293 3.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5-5c0.092-0.092 0.166-0.202 0.217-0.324 0.15-0.362 0.078-0.795-0.217-1.090l-5-5c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"></path>
+</symbol>
+    <!--  -->
     <symbol id="icon-star" viewBox="0 0 32 32">
       <path fill="#ffc531" stroke="#ffc531" stroke-width="2.4" d="M19.6 9.395a2.201 2.201 0 0 0 1.57 1.141l7.6 1.313-5.375 5.535a2.2 2.2 0 0 0-.6 1.846l1.098 7.635-6.922-3.402-.234-.1a2.203 2.203 0 0 0-1.473 0l-.234.1-6.924 3.402 1.1-7.635a2.2 2.2 0 0 0-.6-1.846l-5.377-5.535 7.602-1.313a2.198 2.198 0 0 0 1.57-1.141l3.6-6.822 3.6 6.822z" style="fill:var(--color2, #ffc531);stroke:var(--color2, #ffc531)"/>
     </symbol>
@@ -34,7 +39,7 @@ import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./ven
 </symbol>
   </defs>
 </svg>
-`;function W(){const o=document.createElement("svg");o.style.display="none",o.innerHTML=L,document.body.prepend(o)}const S=d({username:i().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),phoneNumber:i().required("Phone is required").matches(/^\+?\d{10,14}$/,"Phone format: +380XXXXXXXXX").transform(o=>o.replace(/\s|-/g,""))}),q=d({email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),password:i().required("Password is required").min(8,"Minimum 8 characters").max(30,"Max 30 characters")}),C=d({username:i().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),password:i().required("Password is required").min(8,"Minimum 8 characters").max(30,"Max 30 characters")});function m(o){const e={};o.inner.forEach(s=>{e[s.path]=s.message}),Object.entries(e).forEach(([s,r])=>{const t=document.querySelector(`[name="${s}"]`);if(!t)return;let a=t.nextElementSibling;(!a||!a.classList.contains("error"))&&(a=document.createElement("p"),a.classList.add("error"),t.after(a)),a.textContent=r})}function z(o){const e=document.querySelector(".form-lesson");e&&e.addEventListener("submit",async s=>{s.preventDefault(),e.querySelectorAll(".error").forEach(a=>a.remove());const r=new FormData(e),t=Object.fromEntries(r.entries());try{await S.validate(t,{abortEarly:!1}),console.log("BOOKING-FORM DATA:",t),o()}catch(a){m(a)}})}const A={apiKey:"AIzaSyBM5Y6QM2r6WXTF8zM7dWPy11UsmUn6HlI",authDomain:"learnlingo-auth-320f9.firebaseapp.com",projectId:"learnlingo-auth-320f9",storageBucket:"learnlingo-auth-320f9.firebasestorage.app",messagingSenderId:"1060134815936",appId:"1:1060134815936:web:65e14830a23616ff3e0525"},B=g(A),c=v(B);async function O(o,e){return(await w(c,o,e)).user}function P(o){const e=document.querySelector(".form-login");e&&e.addEventListener("submit",async s=>{s.preventDefault(),e.querySelectorAll(".error").forEach(a=>a.remove());const r=new FormData(e),t=Object.fromEntries(r.entries());try{await q.validate(t,{abortEarly:!1}),console.log("LOGIN-FORM DATA:",t),await O(t.email,t.password),o()}catch(a){m(a)}})}function D(){return`
+`;function G(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=E,document.body.prepend(e)}const x={apiKey:"AIzaSyBM5Y6QM2r6WXTF8zM7dWPy11UsmUn6HlI",authDomain:"learnlingo-auth-320f9.firebaseapp.com",projectId:"learnlingo-auth-320f9",storageBucket:"learnlingo-auth-320f9.firebasestorage.app",messagingSenderId:"1060134815936",appId:"1:1060134815936:web:65e14830a23616ff3e0525"},S=b(x),c=y(S),L=d({username:i().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),phoneNumber:i().required("Phone is required").matches(/^\+?\d{10,14}$/,"Phone format: +380XXXXXXXXX").transform(e=>e.replace(/\s|-/g,""))}),q=d({email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),password:i().required("Password is required").min(8,"Minimum 8 characters").max(30,"Max 30 characters")}),z=d({username:i().required("Name is required").min(3,"Minimum 3 characters").max(30,"Max 30 characters"),email:i().required("Email is required").email("Enter a valid email, for example: user@gmail.com"),password:i().required("Password is required").min(8,"Minimum 8 characters").max(30,"Max 30 characters")});function m(e){const o={};e.inner.forEach(r=>{o[r.path]=r.message}),Object.entries(o).forEach(([r,a])=>{const t=document.querySelector(`[name="${r}"]`);if(!t)return;let s=t.nextElementSibling;(!s||!s.classList.contains("error"))&&(s=document.createElement("p"),s.classList.add("error"),t.after(s)),s.textContent=a})}function C(e){const o=document.querySelector(".form-lesson");o&&o.addEventListener("submit",async r=>{r.preventDefault(),o.querySelectorAll(".error").forEach(s=>s.remove());const a=new FormData(o),t=Object.fromEntries(a.entries());try{await L.validate(t,{abortEarly:!1}),console.log("BOOKING-FORM DATA:",t),e()}catch(s){m(s)}})}async function A(e,o){return(await g(c,e,o)).user}function B(e){const o=document.querySelector(".form-login");o&&o.addEventListener("submit",async r=>{r.preventDefault(),o.querySelectorAll(".error").forEach(s=>s.remove());const a=new FormData(o),t=Object.fromEntries(a.entries());try{await q.validate(t,{abortEarly:!1}),console.log("LOGIN-FORM DATA:",t),await A(t.email,t.password),e()}catch(s){m(s)}})}function O(){return`
     <section class="backdrop">
      <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -61,7 +66,7 @@ import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./ven
 
 </div>
     </section>
-    `}function I(){return`
+    `}function P(){return`
     <section class="backdrop">
      <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -86,7 +91,7 @@ import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./ven
 
 </div>
     </section>
-    `}function N(o){return`
+    `}function I(e){return`
     <section class="backdrop">
       <div class="modal">
       <button  class="closeButton" type="button">&times;</button>
@@ -97,13 +102,13 @@ import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./ven
 
          <div class="box-teacher">
          <div class="img-teacher-box">
-   <img src='${o.avatar_url||"../img/main-content/default-avatar.png"} '
-     alt="${o.name||"Teacher"} " class="form-avatar" width="44"
+   <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
+     alt="${e.name||"Teacher"} " class="form-avatar" width="44"
       height="44" />
              </div>
              <div class="teacher-info">
             <p class="teacher-info-title">Your teacher</p>
-         <h2 class="teacher-info-name">${o.name} ${o.surname}</h2>
+         <h2 class="teacher-info-name">${e.name} ${e.surname}</h2>
              </div>
 
          </div>
@@ -144,9 +149,26 @@ import{c as d,b as i,i as g,g as v,s as w,d as k,u as E,o as M,e as x}from"./ven
 
       </div>
     </section>
-  `}async function F(o,e,s){const r=await k(c,e,s);return await E(r.user,{displayName:o}),r.user}function T(o){const e=document.querySelector(".form-register");e&&e.addEventListener("submit",async s=>{s.preventDefault(),e.querySelectorAll(".error").forEach(a=>a.remove());const r=new FormData(e),t=Object.fromEntries(r.entries());try{await C.validate(t,{abortEarly:!1}),console.log("REGISTER-FORM DATA:",t),await F(t.username,t.email,t.password),o()}catch(a){m(a)}})}const l=document.querySelector("#modal-root");function j(){document.body.classList.add("no-scroll")}function X(){document.body.classList.remove("no-scroll")}function p(o){const{type:e,teacher:s}=o;let r="";switch(e){case"trial":r=N(s);break;case"login":r=D();break;case"register":r=I();break;default:return}l.innerHTML=r,j();const t=l.querySelector(".backdrop"),a=l.querySelector(".closeButton"),n=()=>{l.innerHTML="",X(),document.removeEventListener("keydown",f)},f=u=>{u.key==="Escape"&&n()};t.addEventListener("click",u=>{u.target===t&&n()}),a.addEventListener("click",n),document.addEventListener("keydown",f),e==="trial"&&z(n),e==="login"&&P(n),e==="register"&&T(n)}function H(o){return`
-    <div>
-       <p>Hello, ${o.displayName||o.email} </p>
-  <button type="button" class="logout-btn"> LOG-OUT</button>
-    </div>`}const b=document.querySelector(".logIn"),y=document.querySelector(".register"),h=document.querySelector(".auth-list");M(c,o=>{o?(h.innerHTML=H(o),h.addEventListener("click",async e=>{e.target.classList.contains("logout-btn")&&await x(c)}),console.log("name",o.displayName),console.log("Logged in:",o.email)):(b&&b.addEventListener("click",e=>{e.preventDefault(),p({type:"login"})}),y&&y.addEventListener("click",e=>{e.preventDefault(),p({type:"register"})}),console.log("Not logged in"))});const R=new Date;document.querySelector(".footer-date");const U=document.querySelector(".date-year");U.textContent=R.getFullYear();export{W as i,p as m};
-//# sourceMappingURL=footer-DQpPIFKS.js.map
+  `}async function D(e,o,r){const a=await v(c,o,r);return await w(a.user,{displayName:e}),a.user}function F(e){const o=document.querySelector(".form-register");o&&o.addEventListener("submit",async r=>{r.preventDefault(),o.querySelectorAll(".error").forEach(s=>s.remove());const a=new FormData(o),t=Object.fromEntries(a.entries());try{await z.validate(t,{abortEarly:!1}),console.log("REGISTER-FORM DATA:",t),await D(t.username,t.email,t.password),e()}catch(s){m(s)}})}const l=document.querySelector("#modal-root");function N(){document.body.classList.add("no-scroll")}function T(){document.body.classList.remove("no-scroll")}function p(e){const{type:o,teacher:r}=e;let a="";switch(o){case"trial":a=I(r);break;case"login":a=O();break;case"register":a=P();break;default:return}l.innerHTML=a,N();const t=l.querySelector(".backdrop"),s=l.querySelector(".closeButton"),n=()=>{l.innerHTML="",T(),document.removeEventListener("keydown",f)},f=u=>{u.key==="Escape"&&n()};t.addEventListener("click",u=>{u.target===t&&n()}),s.addEventListener("click",n),document.addEventListener("keydown",f),o==="trial"&&C(n),o==="login"&&B(n),o==="register"&&F(n)}function H(e){e.innerHTML=`
+    <li>
+      <button type="button" class="logIn">
+        <svg width="20" height="20">
+          <use href="#icon-log-in"></use>
+        </svg>
+        Log in
+      </button>
+    </li>
+    <li>
+      <button type="button" class="register">Registration</button>
+    </li>
+  `,e.querySelector(".logIn").addEventListener("click",()=>p({type:"login"})),e.querySelector(".register").addEventListener("click",()=>p({type:"register"}))}async function j(){await k(c)}function R(e){return`
+    <div class="out-box">
+
+  <button type="button" class="logout">
+    <svg width="20" height="20">
+      <use href="#icon-log-out"></use>
+    </svg>Log out  </button>
+
+  <p class="out-text">Hello, ${e.displayName||e.email} </p>
+    </div>`}function X(e,o){e.innerHTML=R(o),e.addEventListener("click",async r=>{r.target.classList.contains("logout")&&await j()})}const h=document.querySelector(".auth-list");M(c,e=>{e?X(h,e):H(h)});const U=new Date;document.querySelector(".footer-date");const $=document.querySelector(".date-year");$.textContent=U.getFullYear();export{G as i,p as m};
+//# sourceMappingURL=footer-cKqrOr1x.js.map
