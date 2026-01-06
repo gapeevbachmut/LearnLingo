@@ -7,12 +7,12 @@ import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyAAHGhBQk-Zmy5qBS2dJZN2KYjzIX9oQJg',
-  authDomain: 'learnlingo-auth-320f9.firebaseapp.com',
-  projectId: 'learnlingo-auth-320f9',
-  storageBucket: 'learnlingo-auth-320f9.firebasestorage.app',
-  messagingSenderId: '1060134815936',
-  appId: '1:1060134815936:web:65e14830a23616ff3e0525',
+  apiKey: '***',
+  authDomain: '***',
+  projectId: '***',
+  storageBucket: '***',
+  messagingSenderId: '***',
+  appId: '***',
 };
 
 // Initialize Firebase
