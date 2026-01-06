@@ -1,4 +1,4 @@
-import{m as S,i as T}from"./assets/footer-D93N8gZN.js";import{a as q}from"./assets/vendor-DEkrjftq.js";function E(e){return`
+import{m as S,i as T}from"./assets/footer-DFbkv3eU.js";import{a as q}from"./assets/vendor-D2CNYbfS.js";function E(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
