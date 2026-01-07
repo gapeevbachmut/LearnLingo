@@ -1,4 +1,4 @@
-import { setTeachers } from './teachers-list';
+import { setTeachers } from '../teachers/teachers-list';
 
 const filterLanguage = document.querySelector('.language');
 // тег select

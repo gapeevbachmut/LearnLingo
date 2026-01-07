@@ -1,4 +1,6 @@
-import spriteUrl from '../img/sprite.svg?raw';
+// import spriteUrl from '../img/sprite.svg?raw';
+
+import spriteUrl from '../../img/sprite.svg?raw';
 
 export function injectSvgSprite() {
   const svg = document.createElement('svg');

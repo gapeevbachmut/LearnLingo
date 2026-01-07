@@ -1,5 +1,5 @@
-import { modalWindow } from './modal.js';
-import { createTeacherCard } from './teacher-card.js';
+import { modalWindow } from '../modal/modal';
+import { createTeacherCard } from './teacher-card';
 
 //  це - ul - сюди вставляється  - li (createTeacherCard)
 const teacherList = document.querySelector('.teachers-list'); // ul

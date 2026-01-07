@@ -22,7 +22,6 @@ export function createMarkupLogin() {
    type="button"
    class="password-toggle"
    aria-label="Show password">
-
      <svg width="20" height="20" class="icon-eye">
       <use href="#icon-eye-off"></use>
     </svg></button>

@@ -1,6 +1,6 @@
-import { loginUser } from './auth-login';
-import { showErrors } from './booking-show-error';
-import { loginSchema } from './form-validation-schema';
+import { loginUser } from '../auth/auth-login';
+import { showErrors } from '../form/booking-show-error';
+import { loginSchema } from '../form/form-validation-schema';
 
 export function loginFormSubmit(onSuccess) {
   const formLogin = document.querySelector('.form-login');

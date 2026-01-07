@@ -1,6 +1,6 @@
-import { registerUser } from './auth-register';
-import { showErrors } from './booking-show-error';
-import { registerSchema } from './form-validation-schema';
+import { registerUser } from '../auth/auth-register';
+import { showErrors } from '../form/booking-show-error';
+import { registerSchema } from '../form/form-validation-schema';
 
 export function registerFormSubmit(onSuccess) {
   const formRegister = document.querySelector('.form-register');

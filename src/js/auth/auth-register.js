@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { auth } from './firebase';
+import { auth } from '../firebase/firebase';
 
 export async function registerUser(name, email, password) {
   const userCredential = await createUserWithEmailAndPassword(

@@ -1,8 +1,8 @@
-import { injectSvgSprite } from './js/inject-sprite.js';
-import { initPasswordToggle } from './js/password-toggle.js';
+import { injectSvgSprite } from './js/svg-icons/inject-sprite.js';
+import { initPasswordToggle } from './js/form/password-toggle.js';
 
-import './js/header.js';
-import './js/footer.js';
+import './js/header/header.js';
+import './js/footer/footer.js';
 
 injectSvgSprite(); // вставка SVG-спрайта в <body>
 

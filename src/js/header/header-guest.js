@@ -1,4 +1,4 @@
-import { modalWindow } from './modal';
+import { modalWindow } from '../modal/modal';
 
 export function renderGuestHeader(authList) {
   authList.innerHTML = `

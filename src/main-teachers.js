@@ -1,17 +1,17 @@
-import { injectSvgSprite } from './js/inject-sprite.js';
-import { initPasswordToggle } from './js/password-toggle.js';
+import { injectSvgSprite } from './js/svg-icons/inject-sprite.js';
+import { initPasswordToggle } from './js/form/password-toggle.js';
 
-import './js/header.js';
-import './js/footer.js';
+import './js/header/header.js';
+import './js/footer/footer.js';
 
-import './js/filter-language.js';
-import './js/teachers-list.js';
+import './js/filters/filter-language.js';
+import './js/teachers/teachers-list.js';
 
-import { fetchTeachers } from './js/teachers-api.js';
-import { setTeachers } from './js/teachers-list.js';
-import { createLanguageFilter } from './js/filter-language.js';
-import { createLevelFilter } from './js/filter-level.js';
-import { createPriceFilter } from './js/filter-price.js';
+import { fetchTeachers } from './js/teachers/teachers-api.js';
+import { setTeachers } from './js/teachers/teachers-list.js';
+import { createLanguageFilter } from './js/filters/filter-language.js';
+import { createLevelFilter } from './js/filters/filter-level.js';
+import { createPriceFilter } from './js/filters/filter-price.js';
 
 injectSvgSprite(); // вставка SVG-спрайта в <body>
 

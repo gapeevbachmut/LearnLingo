@@ -1,11 +1,10 @@
-import { bookingFormSubmit } from './booking-form';
-import { loginFormSubmit } from './login-form';
+import { bookingFormSubmit } from '../form/booking-form';
+import { loginFormSubmit } from '../form/login-form';
 
 import { createMarkupLogin } from './modal-markup-login';
 import { createMarkupRegister } from './modal-markup-register';
 import { createMarkupTrialLesson } from './modal-markup-trial-lesson';
-// import { initPasswordToggle } from './password-toggle';
-import { registerFormSubmit } from './register-form';
+import { registerFormSubmit } from '../form/register-form';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -40,8 +39,6 @@ export function modalWindow(config) {
   }
 
   modalRoot.innerHTML = marcup;
-
-  // initPasswordToggle(); // для поля пароля - око
 
   lockBodyScroll();
 
