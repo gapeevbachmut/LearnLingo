@@ -62,7 +62,6 @@ import{i as h,g as y,c as d,b as i,s as g,d as v,u as w,e as k,o as x}from"./ven
    type="button"
    class="password-toggle"
    aria-label="Show password">
-
      <svg width="20" height="20" class="icon-eye">
       <use href="#icon-eye-off"></use>
     </svg></button>
@@ -190,4 +189,4 @@ import{i as h,g as y,c as d,b as i,s as g,d as v,u as w,e as k,o as x}from"./ven
 
   <p class="out-text">Hello, ${e.displayName||e.email} </p>
     </div>`}function X(e,o){e.innerHTML=R(o),e.addEventListener("click",async r=>{r.target.classList.contains("logout")&&await j()})}const b=document.querySelector(".auth-list");x(c,e=>{e?X(b,e):N(b)});const U=new Date;document.querySelector(".footer-date");const $=document.querySelector(".date-year");$.textContent=U.getFullYear();export{V as a,G as i,p as m};
-//# sourceMappingURL=footer-C5l4VhzD.js.map
+//# sourceMappingURL=footer-Cs1gZkEq.js.map
