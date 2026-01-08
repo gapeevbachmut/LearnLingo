@@ -189,4 +189,4 @@ import{i as b,g as y,c as d,b as i,s as g,d as v,u as w,e as k,o as E}from"./ven
   </defs>
 </svg>
 `;function V(){const e=document.createElement("svg");e.style.display="none",e.innerHTML=W,document.body.prepend(e)}function Y(){document.addEventListener("click",e=>{const t=e.target.closest(".password-toggle");if(!t)return;const r=t.closest(".password-box");if(!r)return;const a=r.querySelector("input"),o=t.querySelector("use");if(!a||!o)return;const s=a.type==="password";a.type=s?"text":"password",o.setAttribute("href",s?"#icon-eye":"#icon-eye-off"),t.setAttribute("aria-label",s?"Hide password":"Show password")})}function G(){const e=document.querySelector(".scroll-top");if(!e)return;const t=()=>{window.scrollY>350?e.classList.remove("is-hidden"):e.classList.add("is-hidden")};window.addEventListener("scroll",t),t();const r=()=>window.scrollTo({top:0,behavior:"smooth"});e.addEventListener("click",r)}R();V();Y();G();export{_ as g,p as m};
-//# sourceMappingURL=main-DEzb_023.js.map
+//# sourceMappingURL=main-Bz-IQ57d.js.map

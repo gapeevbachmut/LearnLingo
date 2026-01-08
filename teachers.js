@@ -1,26 +1,28 @@
-import{m,g as L}from"./assets/main-DEzb_023.js";import{a as y}from"./assets/vendor-CJFyyV97.js";function $(e){return JSON.parse(localStorage.getItem(`favorites_${e}`))||[]}function S(e,s){localStorage.setItem(`favorites_${e}`,JSON.stringify(s))}function w(e,s){const a=$(e),t=a.indexOf(s);return t===-1?a.push(s):a.splice(t,1),S(e,a),a}function x(e,s){return $(e).includes(s)}function T(e){e.addEventListener("click",s=>{const a=s.target.closest(".teacher-like-btn");if(!a)return;const n=a.closest(".teacher-card").dataset.id,o=L();if(!o){m({type:"login"});return}w(o.uid,n),a.classList.toggle("is-favorite")})}function q(e){return`
+import{m as L,g as $}from"./assets/main-Bz-IQ57d.js";import{a as S}from"./assets/vendor-CJFyyV97.js";function b(e){return JSON.parse(localStorage.getItem(`favorites_${e}`))||[]}function T(e,t){localStorage.setItem(`favorites_${e}`,JSON.stringify(t))}function x(e,t){const a=b(e),s=a.indexOf(t);return s===-1?a.push(t):a.splice(s,1),T(e,a),a}function y(e,t){return b(e).includes(t)}function q(e){e.addEventListener("click",t=>{const a=t.target.closest(".teacher-like-btn");if(!a)return;const n=a.closest(".teacher-card").dataset.id,c=$();if(!c){alert("This feature is available only to authorized users!"),L({type:"login"});return}x(c.uid,n);const m=a.querySelector("use");y(c.uid,n)?m.setAttribute("href","#icon-hover"):m.setAttribute("href","#icon-normal")})}function E(e){return`
     <div class="teacher-extra is-hidden">
 
     <p class="extra-experience"> ${e.experience}</p>
 
     <h3 class="is-hidden">Reviews</h3>
     <ul class="teacher-reviews">
-      ${e.reviews.map(s=>`
+      ${e.reviews.map(t=>`
           <li class="review-item">
-            <p class="review-title"><span class="review-name">${s.reviewer_name}</span>
+            <p class="review-title"><span class="review-name">${t.reviewer_name}</span>
             <span> <svg width="16" height="16" class="svg-star">
             <use href="#icon-star"></use>
           </svg></span>
-              <span>${s.reviewer_rating.toFixed(1)}</span>
+              <span>${t.reviewer_rating.toFixed(1)}</span>
 
             </p>
-            <p class="review-comment">${s.comment}</p>
+            <p class="review-comment">${t.comment}</p>
           </li>
         `).join("")}
     </ul>
   </div>
-    `}function E(e,s){const a=L(),t=a&&x(a.uid,e.id)?"is-favorite":"";return`
-<li class="teacher-card" data-index="${s}" data-id="${e.id}">
+    `}function k(e,t){const a=$(),n=a&&y(a.uid,e.id)?"#icon-hover":"#icon-normal";return`
+<li  class="teacher-card"
+     data-index="${t}"
+     data-id="${e.id}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${e.avatar_url||"../img/main-content/default-avatar.png"} '
@@ -66,9 +68,9 @@ import{m,g as L}from"./assets/main-DEzb_023.js";import{a as y}from"./assets/vend
         <p class="teacher-price">
           Price / 1 hour: <span class="price-color">${e.price_per_hour}$</span>
         </p>
-        <button class="teacher-like-btn ${t}" type="button" >
+        <button class="teacher-like-btn" type="button" >
           <svg width="16" height="16" class="svg-heart">
-            <use href="#icon-normal"></use>
+            <use href="${n}"></use>
           </svg>
         </button>
       </div>
@@ -98,12 +100,12 @@ ${e.conditions}      </p>
       Read more
     </button>
     <!-- ---------------------   teacher-extra   ------------------------------ -->
-${q(e)}
+${E(e)}
     <!-- ---------------------------------------------------------------------- -->
 
     <!-- Levels -->
     <ul class="teacher-levels">
-${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
+${e.levels.map(c=>`<li class='teacher-level'><p>#${c}</p></li>`).join("")}
 
     </ul>
 
@@ -111,5 +113,5 @@ ${e.levels.map(n=>`<li class='teacher-level'><p>#${n}</p></li>`).join("")}
 
   </div>
 </li>
-    `}const i=document.querySelector(".teachers-list"),l=document.querySelector(".load-more-btn"),k=4;let f=1,c=[];function r(e){c=e,f=1,b()}function b(){const e=f*k,s=c.slice(0,e),a=s.map((t,n)=>E(t,n)).join("");i.innerHTML=a,s.length>=c.length?l.style.display="none":l.style.display="block"}T(i);l.addEventListener("click",()=>{f+=1,b()});i.addEventListener("click",e=>{_(e),F(e)});function _(e){const s=e.target.closest(".teacher-read-more");if(!s)return;const a=s.closest(".teacher-card"),t=a.querySelector(".teacher-extra"),n=a.querySelector(".trial-lesson-btn");P(a),t.classList.toggle("is-hidden")?(s.classList.remove("is-hidden"),n.classList.add("is-hidden")):(s.classList.add("is-hidden"),n.classList.remove("is-hidden"))}function F(e){const s=e.target.closest(".trial-lesson-btn");if(!s)return;const a=s.closest(".teacher-card"),t=Number(a.dataset.index),n=c[t];m({type:"trial",teacher:n})}function P(e){i.querySelectorAll(".teacher-card").forEach(s=>{s!==e&&(s.querySelector(".teacher-extra")?.classList.add("is-hidden"),s.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),s.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))})}const d=document.querySelector(".language");let u=[];function C(e){u=e;const s=e.flatMap(t=>t.languages);[...new Set(s)].forEach(t=>{const n=document.createElement("option");n.value=t,n.textContent=t,d.append(n)}),d.value=""}d.addEventListener("change",e=>{const s=e.target.value;if(!s){r(u);return}const a=u.filter(t=>t.languages.includes(s));r(a)});const B="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function M(){const e=await y.get(B);return e.data?Object.entries(e.data).map(([s,a])=>({id:s,...a})):[]}const p=document.querySelector(".level");let h=[];function R(e){h=e;const s=e.flatMap(t=>t.levels);[...new Set(s)].forEach(t=>{const n=document.createElement("option");n.value=t,n.textContent=t,p.append(n)}),p.value=""}p.addEventListener("change",e=>{const s=e.target.value;if(!s){r(h);return}const a=h.filter(t=>t.levels.includes(s));r(a)});const g=document.querySelector(".price");let v=[];function j(e){v=e;const s=e.map(t=>t.price_per_hour);[...new Set(s)].sort((t,n)=>t-n).forEach(t=>{const n=document.createElement("option");n.value=t,n.textContent=`${t} $`,g.append(n)}),g.value=""}g.addEventListener("change",e=>{const s=e.target.value,a=Number(s);if(!s){r(v);return}const t=v.filter(n=>n.price_per_hour===a);r(t)});async function N(){const e=await M();r(e),C(e),R(e),j(e)}N();
+    `}const o=document.querySelector(".teachers-list"),l=document.querySelector(".load-more-btn"),_=4;let f=1,i=[];function r(e){i=e,f=1,w()}function w(){const e=f*_,t=i.slice(0,e),a=t.map((s,n)=>k(s,n)).join("");o.innerHTML=a,t.length>=i.length?l.style.display="none":l.style.display="block"}q(o);l.addEventListener("click",()=>{f+=1,w()});o.addEventListener("click",e=>{F(e),P(e)});function F(e){const t=e.target.closest(".teacher-read-more");if(!t)return;const a=t.closest(".teacher-card"),s=a.querySelector(".teacher-extra"),n=a.querySelector(".trial-lesson-btn");C(a),s.classList.toggle("is-hidden")?(t.classList.remove("is-hidden"),n.classList.add("is-hidden")):(t.classList.add("is-hidden"),n.classList.remove("is-hidden"))}function P(e){const t=e.target.closest(".trial-lesson-btn");if(!t)return;const a=t.closest(".teacher-card"),s=Number(a.dataset.index),n=i[s];L({type:"trial",teacher:n})}function C(e){o.querySelectorAll(".teacher-card").forEach(t=>{t!==e&&(t.querySelector(".teacher-extra")?.classList.add("is-hidden"),t.querySelector(".trial-lesson-btn")?.classList.add("is-hidden"),t.querySelector(".teacher-read-more")?.classList.remove("is-hidden"))})}const d=document.querySelector(".language");let u=[];function B(e){u=e;const t=e.flatMap(s=>s.languages);[...new Set(t)].forEach(s=>{const n=document.createElement("option");n.value=s,n.textContent=s,d.append(n)}),d.value=""}d.addEventListener("change",e=>{const t=e.target.value;if(!t){r(u);return}const a=u.filter(s=>s.languages.includes(t));r(a)});const I="https://learnlingo-12-25-default-rtdb.firebaseio.com/.json";async function M(){const e=await S.get(I);return e.data?Object.entries(e.data).map(([t,a])=>({id:t,...a})):[]}const p=document.querySelector(".level");let h=[];function N(e){h=e;const t=e.flatMap(s=>s.levels);[...new Set(t)].forEach(s=>{const n=document.createElement("option");n.value=s,n.textContent=s,p.append(n)}),p.value=""}p.addEventListener("change",e=>{const t=e.target.value;if(!t){r(h);return}const a=h.filter(s=>s.levels.includes(t));r(a)});const v=document.querySelector(".price");let g=[];function R(e){g=e;const t=e.map(s=>s.price_per_hour);[...new Set(t)].sort((s,n)=>s-n).forEach(s=>{const n=document.createElement("option");n.value=s,n.textContent=`${s} $`,v.append(n)}),v.value=""}v.addEventListener("change",e=>{const t=e.target.value,a=Number(t);if(!t){r(g);return}const s=g.filter(n=>n.price_per_hour===a);r(s)});async function A(){const e=await M();r(e),B(e),N(e),R(e)}A();
 //# sourceMappingURL=teachers.js.map
