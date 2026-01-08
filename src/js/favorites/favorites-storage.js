@@ -10,12 +10,12 @@ export function saveFavorites(userId, favorites) {
 
 export function toggleFavorites(userId, teacherId) {
   const favorites = getFavorites(userId);
-  const index = favorites.indexOf(teacherId);
+  const favoriteIndex = favorites.indexOf(teacherId);
 
-  if (index === -1) {
+  if (favoriteIndex === -1) {
     favorites.push(teacherId);
   } else {
-    favorites.splice(index, 1);
+    favorites.splice(favoriteIndex, 1);
   }
 
   saveFavorites(userId, favorites);

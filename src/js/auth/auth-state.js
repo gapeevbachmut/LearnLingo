@@ -6,12 +6,17 @@ import { renderAuthHeader } from '../header/header-auth';
 
 let currentUser = null;
 
+let listeners = [];
+
 export function initAuthState() {
   const authList = document.querySelector('.auth-list');
   if (!authList) return;
 
   onAuthStateChanged(auth, user => {
     currentUser = user || null;
+    listeners.forEach(cb => cb(currentUser));
+    // console.log('currentUser', currentUser);
+
     if (user) {
       renderAuthHeader(authList, user);
       // якщо юзер авторизований - показую логаут та ім'я
@@ -23,9 +28,18 @@ export function initAuthState() {
 }
 
 export function getCurrentUser() {
+  // console.log('getCurrentUser', currentUser);
+
   return currentUser;
 }
 
+export function onAuthReady(callback) {
+  listeners.push(callback);
+  // якщо user вже відомий — викликаємо одразу
+  if (currentUser !== null) {
+    callback(currentUser);
+  }
+}
 // слідкує за авторизацією
 // відповідає на зміни - user/!user
 // У КОРИСТУВАЧА Є

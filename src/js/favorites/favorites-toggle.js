@@ -1,6 +1,10 @@
 import { getCurrentUser } from '../auth/auth-state';
 import { modalWindow } from '../modal/modal';
-import { isFavorites, toggleFavorites } from './favorites-storage';
+import {
+  getFavorites,
+  isFavorites,
+  toggleFavorites,
+} from './favorites-storage';
 
 export function initFavoriteToggle(container) {
   container.addEventListener('click', event => {
@@ -10,6 +14,9 @@ export function initFavoriteToggle(container) {
     const card = likeBtn.closest('.teacher-card');
     const teacherId = card.dataset.id;
     const user = getCurrentUser();
+
+    console.log('CLICK teacherId:', teacherId);
+    console.log('Current favorites:', getFavorites(user?.uid));
 
     // гість
     if (!user) {

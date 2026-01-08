@@ -6,6 +6,7 @@ import { setTeachers } from './js/teachers/teachers-list.js';
 import { createLanguageFilter } from './js/filters/filter-language.js';
 import { createLevelFilter } from './js/filters/filter-level.js';
 import { createPriceFilter } from './js/filters/filter-price.js';
+import { onAuthReady } from './js/auth/auth-state.js';
 
 export async function initTeachers() {
   const teachers = await fetchTeachers();
@@ -17,4 +18,6 @@ export async function initTeachers() {
   // console.log('teachers from API:', teachers);
 }
 
-initTeachers();
+onAuthReady(() => {
+  initTeachers();
+});

@@ -23,7 +23,7 @@ export function renderTeachers() {
   const end = currentPage * perPage;
   const teachersForRender = allTeachers.slice(0, end);
   const markup = teachersForRender
-    .map((teacher, index) => createTeacherCard(teacher, index))
+    .map(teacher => createTeacherCard(teacher))
     .join('');
 
   teacherList.innerHTML = markup; //  малюю розмітку
@@ -84,8 +84,10 @@ function handleTrialLesson(event) {
   if (!trialLessonBtn) return;
 
   const card = trialLessonBtn.closest('.teacher-card');
-  const teacherIndex = Number(card.dataset.index);
-  const teacher = allTeachers[teacherIndex];
+  const teacherId = card.dataset.id;
+
+  const teacher = allTeachers.find(t => t.id === teacherId);
+  if (!teacher) return;
 
   modalWindow({ type: 'trial', teacher });
 }

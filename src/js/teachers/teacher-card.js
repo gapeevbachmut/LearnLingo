@@ -2,15 +2,21 @@ import { getCurrentUser } from '../auth/auth-state';
 import { isFavorites } from '../favorites/favorites-storage';
 import { createTeacherExtra } from './teacher-extra';
 
-export function createTeacherCard(teacher, index) {
+export function createTeacherCard(teacher) {
   const user = getCurrentUser(); // отримую поточного юзера
+  // console.log('user:', user);
+  // console.log('teacher.id:', teacher.id);
+
+  // if (user) {
+  //   console.log('isFavorite:', isFavorites(user.uid, teacher.id));
+  // }
+
   // якщо юзер існує та id вчителя є у фоворитах - міняю іконку
   const favoriteIcon = user && isFavorites(user.uid, teacher.id);
   const iconId = favoriteIcon ? '#icon-hover' : '#icon-normal';
 
   return `
 <li  class="teacher-card"
-     data-index="${index}"
      data-id="${teacher.id}">
   <!-- Avatar -->
   <div class="teacher-avatar">
@@ -63,7 +69,7 @@ export function createTeacherCard(teacher, index) {
         </p>
         <button class="teacher-like-btn" type="button" >
           <svg width="16" height="16" class="svg-heart">
-            <use href="${iconId}"></use>
+             <use href="${iconId}"></use>
           </svg>
         </button>
       </div>
