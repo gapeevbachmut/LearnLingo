@@ -1,0 +1,2 @@
+import{o as a}from"./assets/main-C0wBvBBP.js";import{c as s,g as c,f}from"./assets/teachers-api-Cc_ReFrq.js";import"./assets/vendor-CJFyyV97.js";const r=document.querySelector(".favorites-list");function i(e){if(!e.length){r.innerHTML="<p>No favorites yet 💔</p>";return}r.innerHTML=e.map(t=>s(t)).join("")}async function l(e){const t=c(e.uid);if(t.length===0){i([]);return}const n=(await f()).filter(o=>t.includes(o.id));i(n)}a(e=>{if(!e){window.location.href="./index.html";return}l(e)});
+//# sourceMappingURL=favorites.js.map
