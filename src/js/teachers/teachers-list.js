@@ -9,56 +9,55 @@ const perPage = 4;
 let currentPage = 1;
 let allTeachers = []; //копія БД
 
+// -------------   запит на вчителів
 export function setTeachers(teachers) {
   allTeachers = teachers; //teachers приходить з main.js
   currentPage = 1;
   renderTeachers();
 }
 
+// ------------   рендер розмітки
 export function renderTeachers() {
   const end = currentPage * perPage;
-
   const teachersForRender = allTeachers.slice(0, end);
-
   const markup = teachersForRender
     .map((teacher, index) => createTeacherCard(teacher, index))
     .join('');
 
-  teacherList.innerHTML = markup;
-
-  // ховаю кнопку
+  teacherList.innerHTML = markup; //  малюю розмітку
+  // -------------------  ховаю/показую кнопку
   if (teachersForRender.length >= allTeachers.length) {
     loadMoreBtn.style.display = 'none';
+  } else {
+    loadMoreBtn.style.display = 'block';
   }
 }
 
+// -----------------  пагінація
 loadMoreBtn.addEventListener('click', () => {
   currentPage += 1;
   renderTeachers();
 });
 
-// ---------------------------------  teacher  extra
+// ----------------  teacher  extra - додаткова інформація
 
 teacherList.addEventListener('click', event => {
+  handleReadMore(event);
+  handleTrialLesson(event);
+});
+
+// ---------------- обробка - показати більше
+
+function handleReadMore(event) {
   //ловиться клік по всьому списку
   const readMoreBtn = event.target.closest('.teacher-read-more'); // кнопка на картці де був клік
   if (!readMoreBtn) return; // якщо не кнопка - нічого не робиться!!!
 
   const card = readMoreBtn.closest('.teacher-card'); // картка вчителя де був клік
   const extraBlock = card.querySelector('.teacher-extra'); // прихований текст
-
   const trialLessonBtn = card.querySelector('.trial-lesson-btn'); // BTN - Book trial lesson
 
-  // закриваю інші картки
-  teacherList.querySelectorAll('.teacher-card').forEach(otherCard => {
-    if (otherCard !== card) {
-      otherCard.querySelector('.teacher-extra')?.classList.add('is-hidden');
-      otherCard.querySelector('.trial-lesson-btn')?.classList.add('is-hidden');
-      otherCard
-        .querySelector('.teacher-read-more')
-        ?.classList.remove('is-hidden');
-    }
-  });
+  closeOtherCards(card); // закриваю інші картки
 
   // перемикаю поточну картку
   const isHidden = extraBlock.classList.toggle('is-hidden');
@@ -72,38 +71,28 @@ teacherList.addEventListener('click', event => {
     readMoreBtn.classList.add('is-hidden');
     trialLessonBtn.classList.remove('is-hidden');
   }
+}
 
+//------------------обробка кнопки бронювання уроку
+
+function handleTrialLesson(event) {
+  const trialLessonBtn = event.target.closest('.trial-lesson-btn');
+  if (!trialLessonBtn) return;
+
+  const card = trialLessonBtn.closest('.teacher-card');
   const teacherIndex = Number(card.dataset.index);
-
   const teacher = allTeachers[teacherIndex];
 
-  const openModal = event => {
-    event.stopPropagation();
-    modalWindow({ type: 'trial', teacher });
-  };
-  if (!trialLessonBtn) return;
-  trialLessonBtn.addEventListener('click', openModal);
-});
+  modalWindow({ type: 'trial', teacher });
+}
 
-// -------------  scroll  top
+// ---------------------  закрити інші картки
+function closeOtherCards(currentCard) {
+  teacherList.querySelectorAll('.teacher-card').forEach(card => {
+    if (card === currentCard) return;
 
-const scrollTop = document.querySelector('.scroll-top'); // кнопка
-const toggleVisibility = () => {
-  if (window.scrollY > 350) {
-    scrollTop.classList.remove('is-hidden'); //  показати кнопку
-  } else {
-    scrollTop.classList.add('is-hidden'); //  приховати кнопку
-  }
-};
-
-window.addEventListener('scroll', toggleVisibility); //  слухач на вікно при скролі
-toggleVisibility();
-
-const up = () =>
-  //  обробка кліку
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
+    card.querySelector('.teacher-extra')?.classList.add('is-hidden');
+    card.querySelector('.trial-lesson-btn')?.classList.add('is-hidden');
+    card.querySelector('.teacher-read-more')?.classList.remove('is-hidden');
   });
-
-scrollTop.addEventListener('click', up);
+}
