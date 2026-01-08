@@ -1,3 +1,4 @@
+import { initFavoriteToggle } from '../favorites/favorites-toggle';
 import { modalWindow } from '../modal/modal';
 import { createTeacherCard } from './teacher-card';
 
@@ -32,6 +33,8 @@ export function renderTeachers() {
     loadMoreBtn.style.display = 'block';
   }
 }
+
+initFavoriteToggle(teacherList);
 
 // -----------------  пагінація
 loadMoreBtn.addEventListener('click', () => {

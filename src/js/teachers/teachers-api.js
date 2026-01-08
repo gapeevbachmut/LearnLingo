@@ -10,5 +10,9 @@ export async function fetchTeachers() {
     return [];
   }
 
-  return Object.values(response.data);
+  // return Object.values(response.data);
+  return Object.entries(response.data).map(([id, teacher]) => ({
+    id, //  Firebase key
+    ...teacher, // решта даних
+  }));
 }

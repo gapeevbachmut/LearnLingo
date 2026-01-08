@@ -1,8 +1,14 @@
+import { getCurrentUser } from '../auth/auth-state';
+import { isFavorites } from '../favorites/favorites-storage';
 import { createTeacherExtra } from './teacher-extra';
 
 export function createTeacherCard(teacher, index) {
+  const user = getCurrentUser();
+  const favorite =
+    user && isFavorites(user.uid, teacher.id) ? 'is-favorite' : '';
+
   return `
-<li class="teacher-card" data-index="${index}">
+<li class="teacher-card" data-index="${index}" data-id="${teacher.id}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${
@@ -52,7 +58,7 @@ export function createTeacherCard(teacher, index) {
             teacher.price_per_hour
           }$</span>
         </p>
-        <button class="teacher-like-btn" type="button">
+        <button class="teacher-like-btn ${favorite}" type="button" >
           <svg width="16" height="16" class="svg-heart">
             <use href="#icon-normal"></use>
           </svg>

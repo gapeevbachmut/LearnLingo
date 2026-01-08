@@ -110,12 +110,22 @@
   margin-bottom: 12px;
 }
 
-.svg-book {
+.svg-heart {
   stroke: #121417;
   fill: white;
 }
 
-.svg-heart {
+.teacher-like-btn .svg-heart {
+  fill: transparent;
+  stroke: #999;
+}
+
+.teacher-like-btn.is-favorite .svg-heart {
+  fill: #f44336;
+  stroke: #f44336;
+}
+
+.svg-book {
   stroke: #121417;
   fill: white;
 }
