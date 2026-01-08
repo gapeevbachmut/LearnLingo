@@ -3,12 +3,15 @@ import { isFavorites } from '../favorites/favorites-storage';
 import { createTeacherExtra } from './teacher-extra';
 
 export function createTeacherCard(teacher, index) {
-  const user = getCurrentUser();
-  const favorite =
-    user && isFavorites(user.uid, teacher.id) ? 'is-favorite' : '';
+  const user = getCurrentUser(); // отримую поточного юзера
+  // якщо юзер існує та id вчителя є у фоворитах - міняю іконку
+  const favoriteIcon = user && isFavorites(user.uid, teacher.id);
+  const iconId = favoriteIcon ? '#icon-hover' : '#icon-normal';
 
   return `
-<li class="teacher-card" data-index="${index}" data-id="${teacher.id}">
+<li  class="teacher-card"
+     data-index="${index}"
+     data-id="${teacher.id}">
   <!-- Avatar -->
   <div class="teacher-avatar">
     <img src='${
@@ -58,9 +61,9 @@ export function createTeacherCard(teacher, index) {
             teacher.price_per_hour
           }$</span>
         </p>
-        <button class="teacher-like-btn ${favorite}" type="button" >
+        <button class="teacher-like-btn" type="button" >
           <svg width="16" height="16" class="svg-heart">
-            <use href="#icon-normal"></use>
+            <use href="${iconId}"></use>
           </svg>
         </button>
       </div>

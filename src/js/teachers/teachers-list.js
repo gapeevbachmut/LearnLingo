@@ -14,10 +14,11 @@ let allTeachers = []; //копія БД
 export function setTeachers(teachers) {
   allTeachers = teachers; //teachers приходить з main.js
   currentPage = 1;
-  renderTeachers();
+  renderTeachers(); // тут або у auth-state.js
 }
 
 // ------------   рендер розмітки
+
 export function renderTeachers() {
   const end = currentPage * perPage;
   const teachersForRender = allTeachers.slice(0, end);

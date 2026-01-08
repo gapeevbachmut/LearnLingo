@@ -115,14 +115,9 @@
   fill: white;
 }
 
-.teacher-like-btn .svg-heart {
-  fill: transparent;
-  stroke: #999;
-}
-
 .teacher-like-btn.is-favorite .svg-heart {
-  fill: #f44336;
-  stroke: #f44336;
+  fill: #38cd3e;
+  stroke: #38cd3e;
 }
 
 .svg-book {
