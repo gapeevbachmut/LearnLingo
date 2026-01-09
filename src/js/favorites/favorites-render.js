@@ -6,7 +6,7 @@ export function renderFavorites(teachers) {
 
   if (!teachers.length) {
     list.innerHTML =
-      '<p>No favorites teachers yet 💔<svg width="20" height="20" class="teacher-avatar-svg"><use href="heart-broken.svg#icon-hover"></use></svg></p >';
+      '<p class="no-fav-teachers">No favorites teachers yet <svg width="20" height="20" class="svg-heart-broken"><use href="#icon-heart-broken"></use></svg></p >';
     return;
   }
 

@@ -237,6 +237,16 @@
   margin-top: 12px;
 }
 
+.svg-heart-broken {
+  fill: #f4c550;
+}
+
+.no-fav-teachers {
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+}
+
 
 @media screen and (min-width: 768px) {
   .teacher-content {
