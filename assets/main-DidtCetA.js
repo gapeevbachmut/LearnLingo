@@ -194,4 +194,4 @@ import{b as y,g,c as m,d as i,s as v,e as w,u as k,f as E,o as x}from"./vendor-D
 ${V(t)}
 
   `,e.addEventListener("click",async r=>{r.target.classList.contains("logout")&&await W()})}let l=null,b=[];function G(){const e=document.querySelector(".auth-list");e&&x(u,t=>{l=t||null,b.forEach(r=>r(l)),t?Y(e,t):$(e)})}function Q(){return l}function J(e){l!==null&&e(l),b.push(e)}function K(){const e=document.querySelector(".scroll-top");if(!e)return;const t=()=>{window.scrollY>350?e.classList.remove("is-hidden"):e.classList.add("is-hidden")};window.addEventListener("scroll",t),t();const r=()=>window.scrollTo({top:0,behavior:"smooth"});e.addEventListener("click",r)}G();q();A();K();export{Q as g,h as m,J as o};
-//# sourceMappingURL=main-BoYEMPh-.js.map
+//# sourceMappingURL=main-DidtCetA.js.map
