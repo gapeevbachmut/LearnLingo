@@ -170,13 +170,9 @@ input:focus::placeholder {
   color: #f4c550;
 }
 
-/* input:placeholder-shown {
-  border-color: #f4c550;
-} */
 
 form:focus-within {
   border-color: blue;
-  /* додати тінь на форму -  та активний елемент */
 }
 
 /* ---------------------------------- */

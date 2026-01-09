@@ -9,13 +9,13 @@
   justify-content: space-around;
   gap: 12px;
   padding: 0;
-  height: 68px;
 }
 
 .nav {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  align-items: center;
 }
 
 .nav-logo {
@@ -44,9 +44,9 @@
 }
 
 .auth {
-  width: 80%;
+  width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -56,6 +56,12 @@
   gap: 8px;
   align-items: center;
 }
+
+.on-favorites a {
+  font-size: 12px;
+}
+
+/* --------------------------- */
 
 .logIn,
 .logout {
@@ -74,7 +80,7 @@
 .register,
 .out-text {
   border-radius: 8px;
-  padding: 16px 24px;
+  padding: 16px;
   background-color: #121417;
   font-weight: 500;
   font-size: 12px;
@@ -85,10 +91,9 @@
 /* --------------------------------------------- */
 @media screen and (min-width: 768px) {
   .container-header {
-    width: 644px;
+    width: 720px;
     flex-direction: row;
     justify-content: space-between;
-    height: 48px;
   }
 
   .nav {
@@ -102,6 +107,10 @@
 
   .nav-list {
     gap: 28px;
+    font-size: 16px;
+  }
+
+  .on-favorites a {
     font-size: 16px;
   }
 
@@ -120,17 +129,21 @@
   .register,
   .out-text {
     border-radius: 12px;
-    padding: 14px 39px;
     font-weight: 700;
     font-size: 16px;
+  }
+
+  .register {
     height: 48px;
   }
+
 }
 
 
 @media screen and (min-width: 1200px) {
   .container-header {
     width: 944px;
+    height: 68px;
   }
 }
 

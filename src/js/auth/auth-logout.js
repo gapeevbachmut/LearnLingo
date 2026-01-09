@@ -9,7 +9,7 @@ export function logoutUserMarkup(user) {
   const name = user.displayName || user.email;
 
   return `
-    <div class="out-box">
+    <li class="out-box">
 
   <button type="button" class="logout">
     <svg width="20" height="20">
@@ -17,5 +17,5 @@ export function logoutUserMarkup(user) {
     </svg>Log out  </button>
 
   <p class="out-text">Hello, ${name} </p>
-    </div>`;
+    </li>`;
 }

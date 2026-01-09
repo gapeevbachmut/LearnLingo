@@ -4,6 +4,8 @@ import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBM5Y6QM2r6WXTF8zM7dWPy11UsmUn6HlI',
+  // не ховав - бо кажуть тут він ні чого специфічного не дає
+  // та я не зможу його передати у гіт хаб сторінки!!!
   authDomain: 'learnlingo-auth-320f9.firebaseapp.com',
   projectId: 'learnlingo-auth-320f9',
   storageBucket: 'learnlingo-auth-320f9.firebasestorage.app',

@@ -1,4 +1,3 @@
-// teachers/teachers-list.js
 import { createTeacherCard } from './teacher-card';
 import { initTeacherCardActions } from './teacher-card-actions';
 

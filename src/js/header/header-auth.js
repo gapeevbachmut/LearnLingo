@@ -2,7 +2,7 @@ import { logoutUser, logoutUserMarkup } from '../auth/auth-logout';
 
 export function renderAuthHeader(container, user) {
   container.innerHTML = `
-    <div><a href="./favorites.html">Favorites</a></div>
+    <li class="on-favorites"><a href="./favorites.html">Favorites</a></li>
 ${logoutUserMarkup(user)}
 
   `;

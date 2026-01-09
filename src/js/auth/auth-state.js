@@ -1,4 +1,3 @@
-// auth/auth-state.js
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/firebase';
 import { renderGuestHeader } from '../header/header-guest';

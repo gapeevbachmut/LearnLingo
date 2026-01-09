@@ -1,5 +1,3 @@
-// import spriteUrl from '../img/sprite.svg?raw';
-
 import spriteUrl from '../../img/sprite.svg?raw';
 
 export function injectSvgSprite() {

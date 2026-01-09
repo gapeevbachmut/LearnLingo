@@ -232,6 +232,11 @@
   fill: #f4c550;
 }
 
+.my-favorites {
+  text-align: center;
+  margin-top: 12px;
+}
+
 
 @media screen and (min-width: 768px) {
   .teacher-content {

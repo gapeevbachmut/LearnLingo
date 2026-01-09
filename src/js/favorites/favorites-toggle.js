@@ -21,9 +21,7 @@ export function initFavoriteToggle(container) {
 
     // гість
     if (!user) {
-      // тут вивести повідомлення
-      // alert('This feature is available only to authorized users!');
-      onlyAuthMessage();
+      onlyAuthMessage(); // повідомлення
       modalWindow({ type: 'login' });
       return;
     }

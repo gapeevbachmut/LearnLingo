@@ -1,4 +1,3 @@
-// teachers/teacher-card-actions.js
 import { modalWindow } from '../modal/modal';
 import { initFavoriteToggle } from '../favorites/favorites-toggle';
 
