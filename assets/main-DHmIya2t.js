@@ -1,4 +1,4 @@
-import{b as y,g,c as m,d as i,s as v,e as w,u as k,f as E,o as x}from"./vendor-DSAFy7k_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))a(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function r(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(o){if(o.ep)return;o.ep=!0;const s=r(o);fetch(o.href,s)}})();const M=new Date;document.querySelector(".footer-date");const S=document.querySelector(".date-year");S.textContent=M.getFullYear();const L=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+import{b as y,g,c as m,d as i,s as v,e as w,u as k,f as E,o as x}from"./vendor-DSAFy7k_.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))a(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const n of s.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&a(n)}).observe(document,{childList:!0,subtree:!0});function r(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function a(o){if(o.ep)return;o.ep=!0;const s=r(o);fetch(o.href,s)}})();const M=new Date,S=document.querySelector(".date-year");S.textContent=M.getFullYear();const L=`<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
   <defs>
     <symbol id="icon-log-in" viewBox="0 0 32 32">
       <path fill="none" stroke="#f4c550" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2" d="M20 4h1.6c2.24 0 3.36 0 4.216.436a3.996 3.996 0 0 1 1.748 1.748C28 7.04 28 8.16 28 10.4v11.2c0 2.24 0 3.36-.436 4.216a4.001 4.001 0 0 1-1.748 1.748C24.96 28 23.84 28 21.6 28H20M13.333 9.333 20 16m0 0-6.667 6.667M20 16H4" style="stroke:var(--color1, #f4c550)"/>
@@ -180,7 +180,7 @@ import{b as y,g,c as m,d as i,s as v,e as w,u as k,f as E,o as x}from"./vendor-D
       <button type="button" class="register">Registration</button>
     </li>
   `,e.querySelector(".logIn").addEventListener("click",()=>h({type:"login"})),e.querySelector(".register").addEventListener("click",()=>h({type:"register"}))}async function W(){await E(u)}function V(e){return`
-    <div class="out-box">
+    <li class="out-box">
 
   <button type="button" class="logout">
     <svg width="20" height="20">
@@ -188,9 +188,9 @@ import{b as y,g,c as m,d as i,s as v,e as w,u as k,f as E,o as x}from"./vendor-D
     </svg>Log out  </button>
 
   <p class="out-text">Hello, ${e.displayName||e.email} </p>
-    </div>`}function Y(e,t){e.innerHTML=`
-    <div><a href="./favorites.html">Favorites</a></div>
+    </li>`}function Y(e,t){e.innerHTML=`
+    <li class="on-favorites"><a href="./favorites.html">Favorites</a></li>
 ${V(t)}
 
   `,e.addEventListener("click",async r=>{r.target.classList.contains("logout")&&await W()})}let l=null,b=[];function G(){const e=document.querySelector(".auth-list");e&&x(u,t=>{l=t||null,b.forEach(r=>r(l)),t?Y(e,t):$(e)})}function Q(){return l}function J(e){l!==null&&e(l),b.push(e)}function K(){const e=document.querySelector(".scroll-top");if(!e)return;const t=()=>{window.scrollY>350?e.classList.remove("is-hidden"):e.classList.add("is-hidden")};window.addEventListener("scroll",t),t();const r=()=>window.scrollTo({top:0,behavior:"smooth"});e.addEventListener("click",r)}G();q();A();K();export{Q as g,h as m,J as o};
-//# sourceMappingURL=main-v5fm1CT6.js.map
+//# sourceMappingURL=main-DHmIya2t.js.map
