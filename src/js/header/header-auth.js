@@ -1,16 +1,14 @@
 import { logoutUser, logoutUserMarkup } from '../auth/auth-logout';
 
-export function renderAuthHeader(authList, user, container) {
+export function renderAuthHeader(container, user) {
   container.innerHTML = `
-    <li><a href="./favorites.html">❤️ Favorites</a></li>
-    <li>
-      <button class="logout-btn">Log out</button>
-    </li>
-    <li class="user-name">Hello, ${user.displayName || user.email}</li>
-  `;
-  authList.innerHTML = logoutUserMarkup(user);
+    <div><a href="./favorites.html">Favorites</a></div>
+${logoutUserMarkup(user)}
 
-  authList.addEventListener('click', async event => {
+  `;
+  // container.innerHTML = logoutUserMarkup(user);
+
+  container.addEventListener('click', async event => {
     if (event.target.classList.contains('logout')) {
       await logoutUser();
     }

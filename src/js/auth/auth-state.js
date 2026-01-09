@@ -34,11 +34,11 @@ export function getCurrentUser() {
 }
 
 export function onAuthReady(callback) {
-  listeners.push(callback);
   // якщо user вже відомий — викликаємо одразу
   if (currentUser !== null) {
     callback(currentUser);
   }
+  listeners.push(callback);
 }
 // слідкує за авторизацією
 // відповідає на зміни - user/!user

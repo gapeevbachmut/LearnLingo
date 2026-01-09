@@ -1,4 +1,3 @@
-import './js/auth/auth-state.js';
 import './js/footer/footer.js';
 
 import { injectSvgSprite } from './js/svg-icons/inject-sprite.js';

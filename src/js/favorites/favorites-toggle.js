@@ -1,7 +1,8 @@
 import { getCurrentUser } from '../auth/auth-state';
+import { onlyAuthMessage } from '../iziToast/onlyAuth';
 import { modalWindow } from '../modal/modal';
 import {
-  getFavorites,
+  // getFavorites,
   isFavorites,
   toggleFavorites,
 } from './favorites-storage';
@@ -15,13 +16,14 @@ export function initFavoriteToggle(container) {
     const teacherId = card.dataset.id;
     const user = getCurrentUser();
 
-    console.log('CLICK teacherId:', teacherId);
-    console.log('Current favorites:', getFavorites(user?.uid));
+    // console.log('CLICK teacherId:', teacherId);
+    // console.log('Current favorites:', getFavorites(user?.uid));
 
     // гість
     if (!user) {
       // тут вивести повідомлення
-      alert('This feature is available only to authorized users!');
+      // alert('This feature is available only to authorized users!');
+      onlyAuthMessage();
       modalWindow({ type: 'login' });
       return;
     }
