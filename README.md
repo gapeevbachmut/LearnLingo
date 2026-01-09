@@ -11,6 +11,9 @@ only for authenticated users.
 
 ---
 
+- [Technical task](https://docs.google.com/document/d/1ZB_MFgnnJj7t7OXtv5hESSwY6xRgVoACZKzgZczWc3Y/edit?pli=1&tab=t.0)
+- [Model](https://www.figma.com/design/dewf5jVviSTuWMMyU3d8Mc/Learn-Lingo?node-id=0-1&p=f&t=iYJEp5dBp3XZtSiV-0)
+
 ```ts
 🔐 User authentication (Firebase Auth)
 👩‍🏫 Browse tutors with pagination (Load more)
